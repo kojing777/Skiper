@@ -298,7 +298,7 @@ const Hero = () => {
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/30"
         >
-          <span className="text-white font-bold">Next</span>
+          <span className="text-white font-bold">JS</span>
         </motion.div>
       </motion.div>
 
