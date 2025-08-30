@@ -108,7 +108,6 @@ function InteractiveGrid() {
   );
 }
 
-// ================= HERO ==================
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col-reverse md:flex-row  items-center justify-center md:justify-between px-6 md:px-20 lg:px-32 bg-slate-950 text-white overflow-hidden">
