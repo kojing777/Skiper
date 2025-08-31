@@ -239,7 +239,7 @@ const ContactMe = () => {
                 </motion.div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-slate-300">contact@example.com</p>
+                  <p className="text-slate-300">kojingmoktan92@gmail.com</p>
                 </div>
               </motion.div>
 
@@ -261,7 +261,7 @@ const ContactMe = () => {
                 </motion.div>
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-slate-300">+1 (555) 123-4567</p>
+                  <p className="text-slate-300">+077 </p>
                 </div>
               </motion.div>
 
