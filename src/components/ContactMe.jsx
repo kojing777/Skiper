@@ -261,7 +261,7 @@ const ContactMe = () => {
                 </motion.div>
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-slate-300">+077 </p>
+                  <p className="text-slate-300">+977 9813254153</p>
                 </div>
               </motion.div>
 
