@@ -308,11 +308,7 @@ const ContactMe = () => {
                     color: "hover:text-cyan-400",
                     label: "Twitter",
                   },
-                  {
-                    icon: <Globe size={20} />,
-                    color: "hover:text-green-400",
-                    label: "Website",
-                  },
+                  
                 ].map((item, index) => (
                   <motion.a
                     key={index}
