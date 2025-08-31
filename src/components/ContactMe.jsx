@@ -283,7 +283,7 @@ const ContactMe = () => {
                 </motion.div>
                 <div>
                   <h3 className="font-semibold">Location</h3>
-                  <p className="text-slate-300">San Francisco, CA</p>
+                  <p className="text-slate-300">Kathmandu, Nepal</p>
                 </div>
               </motion.div>
             </motion.div>
