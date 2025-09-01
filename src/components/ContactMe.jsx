@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -8,14 +8,11 @@ import {
   Github,
   Linkedin,
   Twitter,
-  Globe,
-  MessageSquare,
   User,
   ArrowRight,
   Heart,
   Sparkles,
 } from "lucide-react";
-import createGlobe from "cobe";
 
 const ContactMe = () => {
   const [formData, setFormData] = useState({
@@ -35,11 +32,9 @@ const ContactMe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic would go here
     console.log("Form submitted:", formData);
     setIsSubmitted(true);
 
-    // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: "", email: "", message: "" });
@@ -82,26 +77,24 @@ const ContactMe = () => {
 
   return (
     <section className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
-      {/* Animated background elements */}
+      {/* Optimized background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Floating shapes */}
+        {/* Subtle floating shapes - reduced animation complexity */}
         <motion.div
           animate={{
-            y: [0, -20, 0],
-            rotate: [0, 5, 0],
-            scale: [1, 1.05, 1],
+            y: [0, -15, 0],
+            scale: [1, 1.03, 1],
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/4 left-10 w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-sm"
         />
         <motion.div
           animate={{
-            y: [0, 20, 0],
-            rotate: [0, -5, 0],
-            scale: [1, 1.1, 1],
+            y: [0, 15, 0],
+            scale: [1, 1.04, 1],
           }}
           transition={{
-            duration: 10,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 1,
@@ -110,12 +103,11 @@ const ContactMe = () => {
         />
         <motion.div
           animate={{
-            y: [0, -30, 0],
-            x: [0, 10, 0],
-            scale: [1, 1.08, 1],
+            y: [0, -20, 0],
+            scale: [1, 1.05, 1],
           }}
           transition={{
-            duration: 12,
+            duration: 14,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 2,
@@ -123,26 +115,27 @@ const ContactMe = () => {
           className="absolute bottom-1/3 left-1/4 w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-500/15 to-blue-500/15 blur-sm"
         />
 
-        {/* Grid pattern */}
+        {/* Static grid pattern - no animation */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiMzMzM4NDIiIHN0cm9rZS13aWR0aD0iMSI+PHBhdGggZD0iTTAgMEg2MFY2MEgwWiIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
         
-        {/* Animated particles */}
-        {[...Array(15)].map((_, i) => (
-          <motion.div
+        {/* Static decorative elements instead of moving particles */}
+        {[...Array(8)].map((_, i) => (
+          <div
             key={i}
-            className="absolute w-2 h-2 rounded-full bg-indigo-500/30"
-            initial={{
-              x: Math.random() * 100 + 'vw',
-              y: Math.random() * 100 + 'vh',
+            className="absolute w-1.5 h-1.5 rounded-full bg-indigo-400/20"
+            style={{
+              top: `${15 + (i * 10)}%`,
+              left: `${5 + (i * 12)}%`,
             }}
-            animate={{
-              x: [null, Math.random() * 100 + 'vw'],
-              y: [null, Math.random() * 100 + 'vh'],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: "linear",
+          />
+        ))}
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1.5 h-1.5 rounded-full bg-purple-400/20"
+            style={{
+              top: `${20 + (i * 8)}%`,
+              right: `${10 + (i * 10)}%`,
             }}
           />
         ))}
@@ -181,12 +174,12 @@ const ContactMe = () => {
           </motion.p>
           
           {/* Animated decorative element */}
-          <motion.div
+          {/* <motion.div
             animate={floatingAnimation}
             className="flex justify-center mt-4"
           >
             <Sparkles className="text-yellow-400" size={28} />
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -203,10 +196,10 @@ const ContactMe = () => {
               variants={itemVariants}
             >
               <motion.div
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                animate={{ rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity }}
               >
-                <MessageSquare className="text-indigo-400" />
+                <Send className="text-indigo-400" />
               </motion.div>
               Let's <span className="text-purple-400">Connect</span>
             </motion.h2>
@@ -222,11 +215,10 @@ const ContactMe = () => {
 
             <motion.div className="space-y-6" variants={itemVariants}>
               <motion.div 
-                className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50"
+                className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 transition-colors hover:bg-slate-800/50"
                 variants={itemVariants}
                 whileHover={{ 
-                  scale: 1.02, 
-                  backgroundColor: "rgba(30, 41, 59, 0.7)",
+                  scale: 1.02,
                   transition: { duration: 0.2 }
                 }}
               >
@@ -244,11 +236,10 @@ const ContactMe = () => {
               </motion.div>
 
               <motion.div 
-                className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50"
+                className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 transition-colors hover:bg-slate-800/50"
                 variants={itemVariants}
                 whileHover={{ 
-                  scale: 1.02, 
-                  backgroundColor: "rgba(30, 41, 59, 0.7)",
+                  scale: 1.02,
                   transition: { duration: 0.2 }
                 }}
               >
@@ -266,11 +257,10 @@ const ContactMe = () => {
               </motion.div>
 
               <motion.div 
-                className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50"
+                className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 transition-colors hover:bg-slate-800/50"
                 variants={itemVariants}
                 whileHover={{ 
-                  scale: 1.02, 
-                  backgroundColor: "rgba(30, 41, 59, 0.7)",
+                  scale: 1.02,
                   transition: { duration: 0.2 }
                 }}
               >
@@ -308,15 +298,14 @@ const ContactMe = () => {
                     color: "hover:text-cyan-400",
                     label: "Twitter",
                   },
-                  
                 ].map((item, index) => (
                   <motion.a
                     key={index}
                     href="#"
                     variants={itemVariants}
-                    whileHover={{ scale: 1.2, y: -5 }}
-                    whileTap={{ scale: 0.9 }}
-                    className={`text-slate-400 transition-colors p-3 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 ${item.color}`}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`text-slate-400 transition-colors p-3 rounded-full bg-slate-800/30 border border-slate-700/30 ${item.color}`}
                     aria-label={item.label}
                   >
                     {item.icon}
@@ -338,8 +327,8 @@ const ContactMe = () => {
             <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl"></div>
 
             <motion.div 
-              className="relative z-20 bg-slate-800/30 backdrop-blur-md p-8 rounded-2xl border border-slate-700/50 shadow-xl"
-              whileHover={{ y: -5 }}
+              className="relative z-20 bg-slate-800/20 p-8 rounded-2xl border border-slate-700/30 shadow-xl"
+              whileHover={{ y: -3 }}
               transition={{ duration: 0.3 }}
             >
               {isSubmitted ? (
@@ -362,8 +351,8 @@ const ContactMe = () => {
                     Thank you for reaching out. I'll get back to you soon.
                   </p>
                   <motion.div
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 1, repeat: Infinity }}
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
                     className="mt-4"
                   >
                     <Heart className="mx-auto text-pink-500" fill="currentColor" />
@@ -371,13 +360,12 @@ const ContactMe = () => {
                 </motion.div>
               ) : (
                 <>
-                  <motion.h2 
-                    className="text-2xl font-bold mb-6 flex items-center gap-2"
-                    animate={floatingAnimation}
-                  >
-                    <Send className="text-indigo-400" />
-                    Send a Message
-                  </motion.h2>
+                 <motion.h2 
+  className="text-2xl font-bold mb-6 flex items-center gap-2"
+>
+  <Send className="text-indigo-400" />
+  Send a Message
+</motion.h2>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <motion.div
@@ -403,7 +391,7 @@ const ContactMe = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                          className="w-full pl-10 pr-4 py-3 bg-slate-800/30 border border-slate-700/30 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-colors"
                           placeholder="John Doe"
                           required
                         />
@@ -433,7 +421,7 @@ const ContactMe = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full pl-10 pr-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                          className="w-full pl-10 pr-4 py-3 bg-slate-800/30 border border-slate-700/30 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-colors"
                           placeholder="john@example.com"
                           required
                         />
@@ -459,7 +447,7 @@ const ContactMe = () => {
                         value={formData.message}
                         onChange={handleChange}
                         rows="5"
-                        className="w-full px-4 py-3 bg-slate-800/50 border border-slate-700/50 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 bg-slate-800/30 border border-slate-700/30 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-colors"
                         placeholder="Tell me about your project..."
                         required
                       ></motion.textarea>
@@ -468,7 +456,6 @@ const ContactMe = () => {
                     <motion.button
                       whileHover={{ 
                         scale: 1.02,
-                        background: "linear-gradient(to right, #4f46e5, #7c3aed)",
                         transition: { duration: 0.2 }
                       }}
                       whileTap={{ scale: 0.98 }}
@@ -477,22 +464,17 @@ const ContactMe = () => {
                       type="submit"
                       className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 relative overflow-hidden"
                     >
-                      <motion.span
-                        animate={{ x: isHovered ? 5 : 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="flex items-center"
-                      >
+                      
                         Send Message
                         <ArrowRight size={20} className="ml-2" />
-                      </motion.span>
                       
-                      {/* Button shine effect */}
+                      
                       <motion.div 
                         className="absolute inset-0 bg-white/20"
                         initial={{ x: "-100%", opacity: 0 }}
                         animate={{ 
                           x: isHovered ? "100%" : "-100%", 
-                          opacity: isHovered ? 1 : 0 
+                          opacity: isHovered ? 0.4 : 0 
                         }}
                         transition={{ duration: 0.6 }}
                       />
@@ -503,26 +485,6 @@ const ContactMe = () => {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Signature at bottom */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-16 text-slate-400"
-        >
-          <p className="flex items-center justify-center gap-1">
-            Made with 
-            <motion.span
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              <Heart size={16} className="text-pink-500" fill="currentColor" />
-            </motion.span>
-            by Bijaya Tamang
-          </p>
-        </motion.div> */}
       </div>
     </section>
   );
