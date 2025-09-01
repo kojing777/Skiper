@@ -71,8 +71,8 @@ const ContactMe = () => {
     transition: {
       duration: 3,
       repeat: Infinity,
-      ease: "easeInOut"
-    }
+      ease: "easeInOut",
+    },
   };
 
   return (
@@ -117,15 +117,15 @@ const ContactMe = () => {
 
         {/* Static grid pattern - no animation */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiMzMzM4NDIiIHN0cm9rZS13aWR0aD0iMSI+PHBhdGggZD0iTTAgMEg2MFY2MEgwWiIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
-        
+
         {/* Static decorative elements instead of moving particles */}
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
             className="absolute w-1.5 h-1.5 rounded-full bg-indigo-400/20"
             style={{
-              top: `${15 + (i * 10)}%`,
-              left: `${5 + (i * 12)}%`,
+              top: `${15 + i * 10}%`,
+              left: `${5 + i * 12}%`,
             }}
           />
         ))}
@@ -134,8 +134,8 @@ const ContactMe = () => {
             key={i}
             className="absolute w-1.5 h-1.5 rounded-full bg-purple-400/20"
             style={{
-              top: `${20 + (i * 8)}%`,
-              right: `${10 + (i * 10)}%`,
+              top: `${20 + i * 8}%`,
+              right: `${10 + i * 10}%`,
             }}
           />
         ))}
@@ -172,7 +172,7 @@ const ContactMe = () => {
             Let's collaborate on your next project. I'm always open to
             discussing new opportunities.
           </motion.p>
-          
+
           {/* Animated decorative element */}
           {/* <motion.div
             animate={floatingAnimation}
@@ -214,15 +214,15 @@ const ContactMe = () => {
             </motion.p>
 
             <motion.div className="space-y-6" variants={itemVariants}>
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 transition-colors hover:bg-slate-800/50"
                 variants={itemVariants}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
               >
-                <motion.div 
+                <motion.div
                   className="p-3 rounded-full bg-indigo-500/20"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
@@ -235,15 +235,15 @@ const ContactMe = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 transition-colors hover:bg-slate-800/50"
                 variants={itemVariants}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
               >
-                <motion.div 
+                <motion.div
                   className="p-3 rounded-full bg-purple-500/20"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
@@ -256,15 +256,15 @@ const ContactMe = () => {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className="flex items-center gap-4 p-4 rounded-xl bg-slate-800/30 border border-slate-700/30 transition-colors hover:bg-slate-800/50"
                 variants={itemVariants}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.02,
-                  transition: { duration: 0.2 }
+                  transition: { duration: 0.2 },
                 }}
               >
-                <motion.div 
+                <motion.div
                   className="p-3 rounded-full bg-pink-500/20"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
@@ -326,7 +326,7 @@ const ContactMe = () => {
             <div className="absolute -top-10 -right-10 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl"></div>
             <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl"></div>
 
-            <motion.div 
+            <motion.div
               className="relative z-20 bg-slate-800/20 p-8 rounded-2xl border border-slate-700/30 shadow-xl"
               whileHover={{ y: -3 }}
               transition={{ duration: 0.3 }}
@@ -355,17 +355,18 @@ const ContactMe = () => {
                     transition={{ duration: 1.5, repeat: Infinity }}
                     className="mt-4"
                   >
-                    <Heart className="mx-auto text-pink-500" fill="currentColor" />
+                    <Heart
+                      className="mx-auto text-pink-500"
+                      fill="currentColor"
+                    />
                   </motion.div>
                 </motion.div>
               ) : (
                 <>
-                 <motion.h2 
-  className="text-2xl font-bold mb-6 flex items-center gap-2"
->
-  <Send className="text-indigo-400" />
-  Send a Message
-</motion.h2>
+                  <motion.h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <Send className="text-indigo-400" />
+                    Send a Message
+                  </motion.h2>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <motion.div
@@ -454,9 +455,9 @@ const ContactMe = () => {
                     </motion.div>
 
                     <motion.button
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.02,
-                        transition: { duration: 0.2 }
+                        transition: { duration: 0.2 },
                       }}
                       whileTap={{ scale: 0.98 }}
                       onHoverStart={() => setIsHovered(true)}
@@ -464,17 +465,14 @@ const ContactMe = () => {
                       type="submit"
                       className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 relative overflow-hidden"
                     >
-                      
-                        Send Message
-                        <ArrowRight size={20} className="ml-2" />
-                      
-                      
-                      <motion.div 
+                      Send Message
+                      <ArrowRight size={20} className="ml-2" />
+                      <motion.div
                         className="absolute inset-0 bg-white/20"
                         initial={{ x: "-100%", opacity: 0 }}
-                        animate={{ 
-                          x: isHovered ? "100%" : "-100%", 
-                          opacity: isHovered ? 0.4 : 0 
+                        animate={{
+                          x: isHovered ? "100%" : "-100%",
+                          opacity: isHovered ? 0.4 : 0,
                         }}
                         transition={{ duration: 0.6 }}
                       />
