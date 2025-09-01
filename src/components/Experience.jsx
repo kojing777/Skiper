@@ -64,6 +64,42 @@ const Experience = () => {
     }
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const tabVariants = {
+    hidden: { scale: 0.95, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-slate-950 text-white overflow-hidden">
       
@@ -112,13 +148,23 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="mx-auto mb-16 text-center"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+          <motion.h1
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             My <span className="text-indigo-400">Journey</span>
-          </h1>
+          </motion.h1>
           
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <motion.p
+            className="text-xl text-slate-300 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
             My path in web development has been an exciting journey of continuous learning and growth
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Tabs Navigation */}
@@ -128,8 +174,16 @@ const Experience = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className="bg-slate-800/50 rounded-full p-1 flex border border-slate-700/30">
-            <button
+          <motion.div 
+            className="bg-slate-800/50 rounded-full p-1 flex border border-slate-700/30"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.button
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab('experience')}
               className={`px-6 py-3 rounded-full text-sm font-medium flex items-center gap-2 transition-all ${
                 activeTab === 'experience'
@@ -139,8 +193,11 @@ const Experience = () => {
             >
               <FaBriefcase />
               Experience
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => setActiveTab('education')}
               className={`px-6 py-3 rounded-full text-sm font-medium flex items-center gap-2 transition-all ${
                 activeTab === 'education'
@@ -150,12 +207,19 @@ const Experience = () => {
             >
               <FaGraduationCap />
               Education
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </motion.div>
 
         {/* Content Section - Reduced effects for better performance */}
-        <div ref={experienceRef} className="bg-slate-800/30 rounded-2xl p-6 md:p-8 border border-slate-700/30">
+        <motion.div 
+          ref={experienceRef} 
+          className="bg-slate-800/30 rounded-2xl p-6 md:p-8 border border-slate-700/30"
+          variants={tabVariants}
+          initial="hidden"
+          animate="visible"
+          key={activeTab}
+        >
           {/* Experience Tab */}
           {activeTab === 'experience' && (
             <motion.div
@@ -164,10 +228,20 @@ const Experience = () => {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <h2 className="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3">
-                <FaBriefcase className="text-indigo-400" />
+              <motion.h2 
+                className="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3"
+                initial={{ opacity: 0, y: -10 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.div
+                  animate={{ rotate: [0, 5, -5, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                >
+                  <FaBriefcase className="text-indigo-400" />
+                </motion.div>
                 Work Experience
-              </h2>
+              </motion.h2>
               
               <div className="relative">
                 {/* Timeline line */}
@@ -182,11 +256,18 @@ const Experience = () => {
                     className="relative pl-16 pb-8 last:pb-0"
                   >
                     {/* Timeline dot */}
-                    <div className="absolute left-0 top-0 w-14 h-14 rounded-full bg-indigo-600 flex items-center justify-center shadow-lg">
+                    <motion.div 
+                      className="absolute left-0 top-0 w-14 h-14 rounded-full bg-indigo-600 flex items-center justify-center shadow-lg"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
                       <FaBriefcase className="text-white" />
-                    </div>
+                    </motion.div>
                     
-                    <div className="bg-slate-800/70 rounded-xl p-6 border border-slate-700/30">
+                    <motion.div 
+                      className="bg-slate-800/70 rounded-xl p-6 border border-slate-700/30"
+                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                    >
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div className="flex items-center gap-4">
                           <div>
@@ -204,33 +285,45 @@ const Experience = () => {
                       
                       <div className="mb-4">
                         <h4 className="font-semibold text-slate-200 mb-2 flex items-center gap-2">
-                          <FaStar className="text-yellow-400" />
+                          <motion.div
+                            animate={{ scale: [1, 1.1, 1] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          >
+                            <FaStar className="text-yellow-400" />
+                          </motion.div>
                           Key Achievements
                         </h4>
                         <ul className="space-y-2">
                           {exp.achievements.map((achievement, i) => (
-                            <li 
+                            <motion.li 
                               key={i}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={isInView ? { opacity: 1, x: 0 } : {}}
+                              transition={{ delay: index * 0.15 + i * 0.1 }}
                               className="flex items-center text-sm text-slate-400"
                             >
                               <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
                               {achievement}
-                            </li>
+                            </motion.li>
                           ))}
                         </ul>
                       </div>
                       
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, i) => (
-                          <span
+                          <motion.span
                             key={i}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                            transition={{ delay: index * 0.15 + i * 0.1 }}
                             className="px-3 py-1 text-xs bg-slate-700/50 rounded-full text-slate-300 border border-slate-600/30"
+                            whileHover={{ scale: 1.05 }}
                           >
                             {tech}
-                          </span>
+                          </motion.span>
                         ))}
                       </div>
-                    </div>
+                    </motion.div>
                   </motion.div>
                 ))}
               </div>
@@ -245,10 +338,20 @@ const Experience = () => {
               transition={{ duration: 0.6 }}
               className="space-y-8"
             >
-              <h2 className="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3">
-                <FaGraduationCap className="text-purple-400" />
+              <motion.h2 
+                className="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3"
+                initial={{ opacity: 0, y: -10 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.div
+                  animate={{ rotate: [0, 5, -5, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                >
+                  <FaGraduationCap className="text-purple-400" />
+                </motion.div>
                 Education
-              </h2>
+              </motion.h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {education.map((edu, index) => (
@@ -258,11 +361,16 @@ const Experience = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                     transition={{ duration: 0.5, delay: index * 0.15 }}
                     className="bg-slate-800/70 rounded-xl p-6 border border-slate-700/30"
+                    whileHover={{ y: -5, transition: { duration: 0.2 } }}
                   >
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="text-2xl p-3 rounded-full bg-purple-600/20">
+                      <motion.div 
+                        className="text-2xl p-3 rounded-full bg-purple-600/20"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                      >
                         <FaGraduationCap className="text-purple-400" />
-                      </div>
+                      </motion.div>
                       <div>
                         <h3 className="text-xl font-bold">{edu.degree}</h3>
                         <p className="text-slate-300">{edu.institution}</p>
@@ -278,18 +386,26 @@ const Experience = () => {
                     
                     <div>
                       <h4 className="font-semibold text-slate-200 mb-2 flex items-center gap-2">
-                        <FaAward className="text-yellow-400" />
+                        <motion.div
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          <FaAward className="text-yellow-400" />
+                        </motion.div>
                         Achievements
                       </h4>
                       <ul className="space-y-2">
                         {edu.achievements.map((achievement, i) => (
-                          <li 
+                          <motion.li 
                             key={i}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={isInView ? { opacity: 1, x: 0 } : {}}
+                            transition={{ delay: index * 0.15 + i * 0.1 }}
                             className="flex items-center text-sm text-slate-400"
                           >
                             <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                             {achievement}
-                          </li>
+                          </motion.li>
                         ))}
                       </ul>
                     </div>
@@ -298,7 +414,7 @@ const Experience = () => {
               </div>
             </motion.div>
           )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
