@@ -552,23 +552,7 @@ const Experience = () => {
           )}
         </div>
 
-        {/* Call to Action */}
-        {/* <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <p className="text-slate-300 mb-6">Interested in working together?</p>
-          <motion.a 
-            href="#contact" 
-            className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 transition-all font-medium shadow-lg"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Let's Connect
-          </motion.a>
-        </motion.div> */}
+       
       </div>
     </section>
   );
