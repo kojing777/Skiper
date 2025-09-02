@@ -58,7 +58,7 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-300 py-12 overflow-hidden">
-      {/* Floating gradient orbs */}
+      {/* Floating gradient */}
       <motion.div
         animate={{ y: [0, 25, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -128,7 +128,6 @@ const Footer = () => {
           ))}
         </motion.div>
       </div>
-
 
       {/* Bottom Bar */}
       <motion.div
