@@ -296,7 +296,7 @@ const Footer = () => {
                 </defs>
               </svg>
 
-              {/* Percentage display - always visible inside circle */}
+              {/* Percentage display */}
               <div className="relative flex flex-col items-center justify-center">
                 <motion.span 
                   key={scrollPercent}
