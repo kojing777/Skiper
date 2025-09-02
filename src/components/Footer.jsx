@@ -252,7 +252,7 @@ const Footer = () => {
         </p>
       </motion.div>
 
-      {/* Scroll to Top Button with Enhanced Circular Progress */}
+      {/* Scroll to Top Button */}
       <AnimatePresence>
         {showScroll && (
           <motion.div
