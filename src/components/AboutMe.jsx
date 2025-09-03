@@ -381,7 +381,7 @@ const AboutMe = () => {
                 </div>
               </motion.div>
 
-              {/* Stats Cards with Clip Path */}
+              {/* Stats Cards */}
               <motion.div
                 className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6"
                 initial={{ opacity: 0, y: 20 }}
