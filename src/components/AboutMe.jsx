@@ -410,7 +410,7 @@ const AboutMe = () => {
                       "polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%)",
                   }}
                 >
-                  <span className="text-2xl font-bold">50+</span>
+                  <span className="text-2xl font-bold">10+</span>
                   <span className="text-sm">Projects Completed</span>
                 </motion.div>
 
