@@ -84,7 +84,7 @@ const Footer = () => {
             Bijaya Tamang
           </h2>
           <p className="text-sm text-slate-400 mt-1">
-            MERN Stack Developer • Building modern web apps
+            MERN Stack Developer.
           </p>
         </motion.div>
 
