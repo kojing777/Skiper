@@ -398,7 +398,7 @@ const AboutMe = () => {
                       "polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%)",
                   }}
                 >
-                  <span className="text-2xl font-bold">3+</span>
+                  <span className="text-2xl font-bold">1+</span>
                   <span className="text-sm">Years Experience</span>
                 </motion.div>
 
