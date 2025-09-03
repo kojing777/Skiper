@@ -475,16 +475,6 @@ const AboutMe = () => {
                   </div>
 
                   {/* Floating badges */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="absolute top-4 left-0 right-0 text-center z-30"
-                  >
-                    <span className="text-xs font-semibold text-indigo-300 bg-indigo-900/30 backdrop-blur-sm py-2 px-4 rounded-full inline-block border border-indigo-700/30">
-                      Global Solutions
-                    </span>
-                  </motion.div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
