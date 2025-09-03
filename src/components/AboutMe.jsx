@@ -538,7 +538,7 @@ const AboutMe = () => {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            Ready to <span className="text-purple-400">Collaborate</span>?
+            Ready to <span className="text-purple-400">Collaborate </span>?
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
             I'm always interested in new challenges and opportunities to work on
