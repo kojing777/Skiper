@@ -303,7 +303,7 @@ const AboutMe = () => {
             ref={aboutRef}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-4 mb-10 relative z-10"
           >
-            {/* Left Column - Text Content with Clip Path */}
+            {/* Left Column */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
