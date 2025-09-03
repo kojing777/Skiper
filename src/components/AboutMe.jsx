@@ -435,7 +435,7 @@ const AboutMe = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="flex items-center justify-center"
             >
-              {/* Card Container for Globe with Clip Path */}
+              {/* Card Container for Globe */}
               <motion.div
                 className="w-full max-w-md bg-slate-800/30 backdrop-blur-md p-6 border border-slate-700/50 shadow-2xl"
                 style={{
