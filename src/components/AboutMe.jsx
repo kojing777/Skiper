@@ -362,7 +362,7 @@ const AboutMe = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.4, duration: 0.5 }}
                   >
-                    My journey in web development started 3 years ago, and since
+                    My journey in web development started 1 year ago, and since
                     then I've been constantly learning and adapting to new
                     technologies. I enjoy the process of turning ideas into
                     reality through elegant code and intuitive interfaces.
