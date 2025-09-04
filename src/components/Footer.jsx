@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, Globe, ArrowUp, X } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  Globe,
+  ArrowUp,
+  X,
+} from "lucide-react";
 
 const Footer = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -13,7 +21,8 @@ const Footer = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = (scrollTop / docHeight) * 100;
       setScrollPercent(Math.round(scrolled));
       setShowScroll(scrollTop > 300);
@@ -83,9 +92,7 @@ const Footer = () => {
           <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Bijaya Tamang
           </h2>
-          <p className="text-sm text-slate-400 mt-1">
-            MERN Stack Developer.
-          </p>
+          <p className="text-sm text-slate-400 mt-1">MERN Stack Developer.</p>
         </motion.div>
 
         {/* Navigation Links */}
@@ -186,7 +193,13 @@ const Footer = () => {
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 />
                 <defs>
-                  <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="progressGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#8b5cf6" />
                     <stop offset="100%" stopColor="#ec4899" />
                   </linearGradient>
@@ -195,7 +208,7 @@ const Footer = () => {
 
               {/* Percentage display */}
               <div className="relative flex flex-col items-center justify-center">
-                <motion.span 
+                <motion.span
                   key={scrollPercent}
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -208,8 +221,7 @@ const Footer = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
                   className="absolute -bottom-4"
-                >
-                </motion.div>
+                ></motion.div>
               </div>
             </button>
           </motion.div>
