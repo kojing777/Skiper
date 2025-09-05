@@ -48,9 +48,9 @@ const Experience = () => {
   const education = [
     {
       id: 1,
-      degree: "Bachelor of Computer Science",
-      institution: "Tech University",
-      duration: "2019 - 2023",
+      degree: " Bachelor of Science in Computer Science and Information Technology",
+      institution: "Nepalaya College",
+      duration: "2022 - Current",
       description: "Specialized in Web Development and Software Engineering. Graduated with honors.",
       achievements: ["GPA: 3.8/4.0", "Dean's List 2021-2023", "Capstone Project Award"]
     },
