@@ -52,11 +52,12 @@ const Experience = () => {
       institution: "Nepalaya College",
       duration: "2022 - Current",
       description: "Specialized in Web Development and Software Engineering. Graduated with honors.",
-      achievements: ["GPA: 3.8/4.0", "Dean's List 2021-2023", "Capstone Project Award"]
+      achievements: ["GPA: 3.8/4.0", "Dean's List 2021-2023",]
+      //  "Capstone Project Award"
     },
     {
       id: 2,
-      degree: "MERN Stack Certification",
+      degree: "MERN Stack  Certification",
       institution: "Mind Risers Academy",
       duration: "2025",
       description: "Intensive 3-month program covering modern web development technologies.",
