@@ -61,7 +61,7 @@ const Experience = () => {
       institution: "Mind Risers Academy",
       duration: "2025",
       description: "Intensive 3-month program covering modern web development technologies.",
-      achievements: ["Top 5% of cohort", "Built 10+ projects", "MERN Stack Certification"]
+      achievements: ["Top 5% of cohort", "Built 5+ projects", "MERN Stack Certification"]
     }
   ];
 
