@@ -56,10 +56,10 @@ const Experience = () => {
     },
     {
       id: 2,
-      degree: "Full Stack Web Development Bootcamp",
-      institution: "Code Academy",
-      duration: "2022",
-      description: "Intensive 6-month program covering modern web development technologies.",
+      degree: "MERN Stack Certification",
+      institution: "Mind Risers Academy",
+      duration: "2025",
+      description: "Intensive 3-month program covering modern web development technologies.",
       achievements: ["Top 5% of cohort", "Built 10+ projects", "MERN Stack Certification"]
     }
   ];
