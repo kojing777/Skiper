@@ -262,7 +262,7 @@ const AboutMe = () => {
   return (
     <section className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
       <AnimatedBackground />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
@@ -564,14 +564,14 @@ const TechnicalStack = () => {
 
   // Tech stack icons
   const techStack = [
-    { icon: <FaReact className="text-sky-400" />, name: "React" },
-    { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
+    { icon: <FaHtml5 className="text-orange-500" />, name: "HTML5" },
     { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
     { icon: <SiExpress className="text-gray-400" />, name: "Express" },
-    { icon: <FaHtml5 className="text-orange-500" />, name: "HTML5" },
+    { icon: <FaReact className="text-sky-400" />, name: "React" },
+    { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
     { icon: <FaCss3Alt className="text-blue-500" />, name: "CSS3" },
-    { icon: <FaJs className="text-yellow-400" />, name: "JavaScript" },
     { icon: <SiTailwindcss className="text-cyan-400" />, name: "TailwindCSS" },
+    { icon: <FaJs className="text-yellow-400" />, name: "JavaScript" },
     { icon: <FaDatabase className="text-purple-400" />, name: "Database" },
     { icon: <FaGitAlt className="text-orange-600" />, name: "Git" },
   ];
@@ -587,7 +587,7 @@ const TechnicalStack = () => {
   return (
     <section className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
       <AnimatedBackground />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
