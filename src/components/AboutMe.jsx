@@ -22,6 +22,8 @@ import {
   FaLightbulb,
   FaHeart,
 } from "react-icons/fa";
+import { SiRender } from "react-icons/si";
+
 import {
   SiMongodb,
   SiExpress,
@@ -578,10 +580,10 @@ const TechnicalStack = () => {
 
   // Tools icons
   const toolsStack = [
-    { icon: <SiPostman className="text-orange-500" />, name: "Postman" },
-    { icon: <FaFigma className="text-purple-500" />, name: "Figma" },
     { icon: <FaGithub className="text-gray-200" />, name: "GitHub" },
+    { icon: <SiPostman className="text-orange-500" />, name: "Postman" },
     { icon: <SiVercel className="text-gray-200" />, name: "Vercel" },
+    { icon: <SiRender className="text-purple-500" />, name: "Render" },
   ];
 
   return (
