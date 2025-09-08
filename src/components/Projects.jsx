@@ -26,25 +26,33 @@ const visualData = [
     key: 1,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216017/Screenshot_2025-09-07_091826_w6iplj.png",
     label: "Groceezy",
+    liveUrl: "https://groceezy.kojing.me/", // Add your actual project URL here
+    githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0" // Add your actual GitHub URL here
   },
   {
     key: 2,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png",
     label: "MeubelHouse",
+    liveUrl: "https://meubel-house-iota.vercel.app/",
+    githubUrl: "https://github.com/kojing777/MeubelHouse"
   },
   {
     key: 3,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png",
     label: "fra-cheur",
+    liveUrl: "https://fra-cheur.vercel.app/",
+    githubUrl: "https://github.com/kojing777/Fra-cheur-v1.1"
   },
   {
     key: 4,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216059/Screenshot_2025-09-07_091908_gjnpqc.png",
     label: "Portfolio",
+    liveUrl: "https://portfolio-wine-alpha-82.vercel.app/",
+    githubUrl: "https://github.com/kojing777/Skiper"
   },
 ];
 
-const ProjectsShowcase = () => {
+const Projects = () => {
   const [activeTab, setActiveTab] = useState('showcase');
   const [focusedItem, setFocusedItem] = useState(null);
   const [isLargeScreen, setIsLargeScreen] = useState(true);
@@ -86,42 +94,42 @@ const ProjectsShowcase = () => {
       features: ["User Authentication", "Payment Integration", "Admin Dashboard", "Product Management"],
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       icons: [FaReact, FaNodeJs, SiMongodb, FaServer],
-      githubUrl: "#",
-      liveUrl: "#",
+      githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0",
+      liveUrl: "https://groceezy.kojing.me/",
       image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216017/Screenshot_2025-09-07_091826_w6iplj.png"
     },
     {
       id: 2,
-      title: "MeubelHouse",
+      title: "Task Management App",
       description: "A collaborative task management application with real-time updates and team collaboration features.",
       features: ["Real-time Updates", "Team Collaboration", "Drag & Drop", "Notifications"],
       technologies: ["React", "Firebase", "Tailwind CSS", "Context API"],
       icons: [FaReact, SiFirebase, SiTailwindcss, FaMobile],
       githubUrl: "#",
       liveUrl: "#",
-      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png"
+      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png"
     },
     {
       id: 3,
-      title: "fra-cheur",
+      title: "Social Media Dashboard",
       description: "A comprehensive dashboard for social media analytics with data visualization and reporting.",
       features: ["Data Visualization", "Analytics", "User Reports", "Custom Metrics"],
       technologies: ["Next.js", "TypeScript", "Chart.js", "MongoDB"],
       icons: [SiNextdotjs, SiTypescript, FaDatabase, FaServer],
       githubUrl: "#",
       liveUrl: "#",
-      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png"
+      image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       id: 4,
-      title: "portfolio",
+      title: "Fitness Tracker",
       description: "A mobile-friendly fitness application with workout plans, progress tracking, and social features.",
       features: ["Workout Plans", "Progress Tracking", "Social Features", "Mobile Optimized"],
       technologies: ["React Native", "Node.js", "MongoDB", "Express"],
       icons: [FaMobile, FaNodeJs, SiMongodb, SiExpress],
-      githubUrl: "https://github.com/kojing777/Skiper",
-      liveUrl: "https://portfolio-wine-alpha-82.vercel.app/",
-      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216059/Screenshot_2025-09-07_091908_gjnpqc.png"
+      githubUrl: "#",
+      liveUrl: "#",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -146,7 +154,7 @@ const ProjectsShowcase = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:20px_20px] opacity-15"></div>
       </div>
 
-  <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -199,7 +207,7 @@ const ProjectsShowcase = () => {
             {visualData.map((item) => (
               <div
                 key={item.key}
-                className="p-4 cursor-pointer relative sm:flex items-center justify-between"
+                className="p-4 cursor-pointer relative sm:flex items-center justify-between group"
                 onMouseEnter={() => onHoverActivate(item)}
               >
                 {!isLargeScreen && (
@@ -218,15 +226,35 @@ const ProjectsShowcase = () => {
                 >
                   {item.label}
                 </h2>
-                <button
-                  className={`sm:block hidden p-4 rounded-full transition-all duration-300 ease-out ${
-                    focusedItem?.key === item.key
-                      ? "mix-blend-difference z-20 bg-white text-black"
-                      : ""
-                  }`}
-                >
-                  <MoveUpRight className="w-8 h-8" />
-                </button>
+                
+                {/* Updated button with links */}
+                <div className={`sm:flex hidden items-center gap-3 transition-all duration-300 ease-out ${
+                  focusedItem?.key === item.key
+                    ? "mix-blend-difference z-20 bg-white text-black rounded-full"
+                    : ""
+                }`}>
+                  {/* GitHub Link */}
+                  <motion.a
+                    href={item.githubUrl}
+                    whileHover={{ scale: 1.1 }}
+                    className="p-2 rounded-full hover:bg-slate-700/50 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FaGithub className="w-5 h-5" />
+                  </motion.a>
+                  
+                  {/* Live Project Link */}
+                  <motion.a
+                    href={item.liveUrl}
+                    whileHover={{ scale: 1.1 }}
+                    className="p-2 rounded-full hover:bg-slate-700/50 transition-colors flex items-center gap-1"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FaExternalLinkAlt className="w-4 h-4" />
+                    <span className="text-sm font-medium">View Live</span>
+                  </motion.a>
+                </div>
+                
                 <div
                   className={`h-[2px] bg-white/70 absolute bottom-0 left-0 transition-all duration-300 ease-linear ${
                     focusedItem?.key === item.key ? "w-full" : "w-0"
@@ -249,12 +277,39 @@ const ProjectsShowcase = () => {
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <div className="w-[600px] h-auto max-h-[800px] overflow-hidden rounded-lg bg-slate-950 border border-slate-700 shadow-2xl">
+                <div className="w-[300px] h-auto max-h-[400px] overflow-hidden rounded-lg bg-slate-950 border border-slate-700 shadow-2xl">
                   <img
                     src={focusedItem.url}
                     alt={focusedItem.label}
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-contain"
                   />
+                  
+                  {/* Links on the hover image */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 to-transparent p-4 flex justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <motion.a
+                      href={focusedItem.githubUrl}
+                      className="p-2 bg-slate-800/80 rounded-full backdrop-blur-sm hover:bg-slate-700/80 transition-colors"
+                      whileHover={{ scale: 1.1 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(focusedItem.githubUrl, '_blank');
+                      }}
+                    >
+                      <FaGithub className="w-5 h-5 text-white" />
+                    </motion.a>
+                    <motion.a
+                      href={focusedItem.liveUrl}
+                      className="px-3 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full text-sm font-medium flex items-center gap-1 hover:from-indigo-500 hover:to-purple-500 transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(focusedItem.liveUrl, '_blank');
+                      }}
+                    >
+                      <FaExternalLinkAlt className="w-4 h-4" />
+                      <span>View Live</span>
+                    </motion.a>
+                  </div>
                 </div>
               </motion.div>
             )}
@@ -282,8 +337,7 @@ const ProjectsShowcase = () => {
   );
 };
 
-// Project Card Component
-// Project Card Component
+// Project Card Component (unchanged from your previous version)
 const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
   return (
     <motion.div
@@ -305,7 +359,7 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
             bg-gradient-to-br from-slate-800 to-slate-900 backdrop-blur-xl
             transition-all duration-700 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}
         >
-          {/* Project image - UPDATED */}
+          {/* Project image */}
           <div className="absolute inset-0 flex items-center justify-center p-4">
             <img 
               src={project.image} 
@@ -432,4 +486,4 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
   );
 };
 
-export default ProjectsShowcase;
+export default Projects;
