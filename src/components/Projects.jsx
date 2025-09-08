@@ -113,12 +113,11 @@ const Projects = () => {
       id: 2,
       title: "Fra-cheur",
       description:
-        "A collaborative task management application with real-time updates and team collaboration features.",
+        "An artisanal bakery e-commerce platform offering fresh baked goods, custom orders, and local delivery.",
       features: [
-        "Real-time Updates",
-        "Team Collaboration",
-        "Drag & Drop",
-        "Notifications",
+        "Custom cake design interface",
+        "Local delivery zone mapping",
+        "Seasonal specials calendar",
       ],
       technologies: ["HTML", "CSS", "JS"],
       icons: [FaHtml5, SiCss3, FaJsSquare, FaMobile],
@@ -133,10 +132,10 @@ const Projects = () => {
       description:
         "An elegant furniture e-commerce experience with AR preview functionality. Customers can visualize products in their space before purchasing, with filters for style, room, and dimensions",
       features: [
-        "Data Visualization",
-        "Analytics",
-        "User Reports",
-        "Custom Metrics",
+        "Room style filters",
+        "Customization options",
+        "Delivery scheduling",
+        "Assembly service booking",
       ],
       technologies: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
       icons: [FaReact, FaNodeJs, SiMongodb, SiTailwindcss],
@@ -151,10 +150,10 @@ const Projects = () => {
       description:
         "My responsive developer portfolio showcasing projects, skills, and experience. Built with modern web technologies and featuring interactive elements and smooth animations.",
       features: [
-        "Workout Plans",
-        "Progress Tracking",
-        "Social Features",
-        "Mobile Optimized",
+        "Interactive project showcase",
+        "Smooth animations and transitions",
+        "Responsive design",
+        "Performance optimized",
       ],
       technologies: ["React", "Tailwind CSS", "Framer Motion", "Tailwindcss"],
       icons: [FaMobile, FaReact, TbBrandFramerMotion, SiTailwindcss],
