@@ -19,7 +19,6 @@ import {
   SiTypescript,
   SiFirebase
 } from "react-icons/si";
-import { MoveUpRight } from "lucide-react";
 
 const visualData = [
   {
