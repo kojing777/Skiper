@@ -35,12 +35,12 @@ const visualData = [
   {
     key: 3,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png",
-    label: "Sigma Connect",
+    label: "fra-cheur",
   },
   {
     key: 4,
-    url: "https://images.pexels.com/photos/28168248/pexels-photo-28168248.jpeg",
-    label: "Futuristic Gamma",
+    url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216059/Screenshot_2025-09-07_091908_gjnpqc.png",
+    label: "Portfolio",
   },
 ];
 
@@ -146,7 +146,7 @@ const ProjectsShowcase = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:20px_20px] opacity-15"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+  <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -236,10 +236,8 @@ const ProjectsShowcase = () => {
             ))}
 
             {isLargeScreen && focusedItem && (
-              <motion.img
-                src={focusedItem.url}
-                alt={focusedItem.label}
-                className="fixed z-30 object-cover w-[300px] h-[400px] rounded-lg pointer-events-none shadow-2xl bg-slate-950 border border-slate-700"
+              <motion.div
+                className="fixed z-30 pointer-events-none"
                 style={{
                   left: smoothX,
                   top: smoothY,
@@ -250,7 +248,15 @@ const ProjectsShowcase = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              />
+              >
+                <div className="w-[600px] h-auto max-h-[800px] overflow-hidden rounded-lg bg-slate-950 border border-slate-700 shadow-2xl">
+                  <img
+                    src={focusedItem.url}
+                    alt={focusedItem.label}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </motion.div>
             )}
           </motion.div>
         ) : (
