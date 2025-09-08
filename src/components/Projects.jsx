@@ -2,28 +2,27 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { 
-  FaGithub, 
-  FaExternalLinkAlt, 
-  FaReact, 
-  FaNodeJs, 
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaReact,
+  FaNodeJs,
   FaDatabase,
   FaMobile,
-  FaServer
+  FaServer,
 } from "react-icons/fa";
+import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaHtml5 } from "react-icons/fa";
 import { FaJsSquare } from "react-icons/fa";
 import { SiCss3 } from "react-icons/si";
 
-
-
-import { 
-  SiMongodb, 
-  SiExpress, 
-  SiTailwindcss, 
-  SiNextdotjs, 
+import {
+  SiMongodb,
+  SiExpress,
+  SiTailwindcss,
+  SiNextdotjs,
   SiTypescript,
-  SiFirebase
+  SiFirebase,
 } from "react-icons/si";
 
 const visualData = [
@@ -32,33 +31,33 @@ const visualData = [
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216017/Screenshot_2025-09-07_091826_w6iplj.png",
     label: "Groceezy",
     liveUrl: "https://groceezy.kojing.me/",
-    githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0" 
+    githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0",
   },
   {
     key: 2,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png",
     label: "MeubelHouse",
     liveUrl: "https://meubel-house-iota.vercel.app/",
-    githubUrl: "https://github.com/kojing777/MeubelHouse"
+    githubUrl: "https://github.com/kojing777/MeubelHouse",
   },
   {
     key: 3,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png",
     label: "fra-cheur",
     liveUrl: "https://fra-cheur.vercel.app/",
-    githubUrl: "https://github.com/kojing777/Fra-cheur-v1.1"
+    githubUrl: "https://github.com/kojing777/Fra-cheur-v1.1",
   },
   {
     key: 4,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216059/Screenshot_2025-09-07_091908_gjnpqc.png",
     label: "Portfolio",
     liveUrl: "https://portfolio-wine-alpha-82.vercel.app/",
-    githubUrl: "https://github.com/kojing777/Skiper"
+    githubUrl: "https://github.com/kojing777/Skiper",
   },
 ];
 
 const Projects = () => {
-  const [activeTab, setActiveTab] = useState('showcase');
+  const [activeTab, setActiveTab] = useState("showcase");
   const [focusedItem, setFocusedItem] = useState(null);
   const [isLargeScreen, setIsLargeScreen] = useState(true);
   const [flippedCard, setFlippedCard] = useState(null);
@@ -95,52 +94,79 @@ const Projects = () => {
     {
       id: 1,
       title: "Groceezy",
-      description: "A modern grocery delivery platform that connects local stores with customers. Features real-time inventory tracking, smart recommendations, and seamless checkout process.",
-      features: ["User Authentication", "Payment Integration", "Admin Dashboard", "Product Management"],
-      technologies: ["MongoDB", "Express", "React","Node.js", "Tailwind CSS"],
+      description:
+        "A modern grocery delivery platform that connects local stores with customers. Features real-time inventory tracking, smart recommendations, and seamless checkout process.",
+      features: [
+        "Real-time inventory tracking",
+        "Smart recommendation engine",
+        "Multiple payment options",
+        "Store management dashboard",
+      ],
+      technologies: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
       icons: [FaReact, FaNodeJs, SiMongodb, FaServer],
       githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0",
       liveUrl: "https://groceezy.kojing.me/",
-      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216017/Screenshot_2025-09-07_091826_w6iplj.png"
+      image:
+        "https://res.cloudinary.com/dp27ua535/image/upload/v1757216017/Screenshot_2025-09-07_091826_w6iplj.png",
     },
     {
       id: 2,
       title: "Fra-cheur",
-      description: "A collaborative task management application with real-time updates and team collaboration features.",
-      features: ["Real-time Updates", "Team Collaboration", "Drag & Drop", "Notifications"],
-      technologies: ["HTML", "CSS", "JS",],
+      description:
+        "A collaborative task management application with real-time updates and team collaboration features.",
+      features: [
+        "Real-time Updates",
+        "Team Collaboration",
+        "Drag & Drop",
+        "Notifications",
+      ],
+      technologies: ["HTML", "CSS", "JS"],
       icons: [FaHtml5, SiCss3, FaJsSquare, FaMobile],
       githubUrl: "https://github.com/kojing777/Fra-cheur-v1.1",
       liveUrl: "https://fra-cheur.vercel.app/",
-      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png"
+      image:
+        "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png",
     },
     {
       id: 3,
       title: "MeubelHouse",
-      description: "An elegant furniture e-commerce experience with AR preview functionality. Customers can visualize products in their space before purchasing, with filters for style, room, and dimensions",
-      features: ["Data Visualization", "Analytics", "User Reports", "Custom Metrics"],
-      technologies: ["MongoDB", "Express", "React","Node.js", "Tailwind CSS"],
-      icons: [FaReact, FaNodeJs, SiMongodb, FaServer],
+      description:
+        "An elegant furniture e-commerce experience with AR preview functionality. Customers can visualize products in their space before purchasing, with filters for style, room, and dimensions",
+      features: [
+        "Data Visualization",
+        "Analytics",
+        "User Reports",
+        "Custom Metrics",
+      ],
+      technologies: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS"],
+      icons: [FaReact, FaNodeJs, SiMongodb, SiTailwindcss],
       githubUrl: "https://github.com/kojing777/MeubelHouse",
       liveUrl: "https://meubel-house-iota.vercel.app/",
-      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png"
+      image:
+        "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png",
     },
     {
       id: 4,
       title: "Portfolio",
-      description: "My responsive developer portfolio showcasing projects, skills, and experience. Built with modern web technologies and featuring interactive elements and smooth animations.",
-      features: ["Workout Plans", "Progress Tracking", "Social Features", "Mobile Optimized"],
-      technologies: ["React", "Tailwind CSS", "Framer Motion", ""],
-      icons: [FaMobile, FaNodeJs, SiMongodb, SiExpress],
+      description:
+        "My responsive developer portfolio showcasing projects, skills, and experience. Built with modern web technologies and featuring interactive elements and smooth animations.",
+      features: [
+        "Workout Plans",
+        "Progress Tracking",
+        "Social Features",
+        "Mobile Optimized",
+      ],
+      technologies: ["React", "Tailwind CSS", "Framer Motion", "Tailwindcss"],
+      icons: [FaMobile, FaReact, TbBrandFramerMotion, SiTailwindcss],
       githubUrl: "https://github.com/kojing777/Skiper",
       liveUrl: "https://portfolio-wine-alpha-82.vercel.app/",
-      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216059/Screenshot_2025-09-07_091908_gjnpqc.png"
-    }
+      image:
+        "https://res.cloudinary.com/dp27ua535/image/upload/v1757216059/Screenshot_2025-09-07_091908_gjnpqc.png",
+    },
   ];
 
   return (
     <section className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
-      
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Moving Gradient Bars */}
@@ -151,10 +177,15 @@ const Projects = () => {
         />
         <motion.div
           animate={{ x: [0, -30, 0], y: [0, 30, 0], rotate: [0, -20, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
           className="absolute bottom-1/4 right-12 w-2 h-24 bg-gradient-to-b from-purple-400/20 to-pink-500/20 rounded-full blur-sm"
         />
-        
+
         {/* Subtle grid overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:20px_20px] opacity-15"></div>
       </div>
@@ -164,34 +195,38 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="mx-auto mb-16 text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-            My <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">Projects</span>
+            My{" "}
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
+              Projects
+            </span>
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-            Here are some of the projects I've built using modern technologies and best practices
+            Here are some of the projects I've built using modern technologies
+            and best practices
           </p>
-          
+
           {/* Tab Navigation */}
           <div className="flex justify-center space-x-4 mb-12">
             <button
-              onClick={() => setActiveTab('showcase')}
+              onClick={() => setActiveTab("showcase")}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeTab === 'showcase'
-                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                activeTab === "showcase"
+                  ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg"
+                  : "bg-slate-800 text-slate-300 hover:bg-slate-700"
               }`}
             >
               Interactive Showcase
             </button>
             <button
-              onClick={() => setActiveTab('projects')}
+              onClick={() => setActiveTab("projects")}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeTab === 'projects'
-                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                activeTab === "projects"
+                  ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg"
+                  : "bg-slate-800 text-slate-300 hover:bg-slate-700"
               }`}
             >
               Project Portfolio
@@ -200,7 +235,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Content based on active tab */}
-        {activeTab === 'showcase' ? (
+        {activeTab === "showcase" ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -231,13 +266,15 @@ const Projects = () => {
                 >
                   {item.label}
                 </h2>
-                
+
                 {/* Updated button with links */}
-                <div className={`sm:flex hidden items-center gap-3 transition-all duration-300 ease-out ${
-                  focusedItem?.key === item.key
-                    ? "mix-blend-difference z-20 bg-white text-black rounded-full"
-                    : ""
-                }`}>
+                <div
+                  className={`sm:flex hidden items-center gap-3 transition-all duration-300 ease-out ${
+                    focusedItem?.key === item.key
+                      ? "mix-blend-difference z-20 bg-white text-black rounded-full"
+                      : ""
+                  }`}
+                >
                   {/* GitHub Link */}
                   <motion.a
                     href={item.githubUrl}
@@ -247,7 +284,7 @@ const Projects = () => {
                   >
                     <FaGithub className="w-5 h-5" />
                   </motion.a>
-                  
+
                   {/* Live Project Link */}
                   <motion.a
                     href={item.liveUrl}
@@ -259,7 +296,7 @@ const Projects = () => {
                     <span className="text-sm font-medium">View Live</span>
                   </motion.a>
                 </div>
-                
+
                 <div
                   className={`h-[2px] bg-white/70 absolute bottom-0 left-0 transition-all duration-300 ease-linear ${
                     focusedItem?.key === item.key ? "w-full" : "w-0"
@@ -288,7 +325,7 @@ const Projects = () => {
                     alt={focusedItem.label}
                     className="w-full h-auto object-contain"
                   />
-                  
+
                   {/* Links on the hover image */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 to-transparent p-4 flex justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <motion.a
@@ -297,7 +334,7 @@ const Projects = () => {
                       whileHover={{ scale: 1.1 }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        window.open(focusedItem.githubUrl, '_blank');
+                        window.open(focusedItem.githubUrl, "_blank");
                       }}
                     >
                       <FaGithub className="w-5 h-5 text-white" />
@@ -308,7 +345,7 @@ const Projects = () => {
                       whileHover={{ scale: 1.05 }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        window.open(focusedItem.liveUrl, '_blank');
+                        window.open(focusedItem.liveUrl, "_blank");
                       }}
                     >
                       <FaExternalLinkAlt className="w-4 h-4" />
@@ -327,9 +364,9 @@ const Projects = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
           >
             {projects.map((project, index) => (
-              <ProjectCard 
-                key={project.id} 
-                project={project} 
+              <ProjectCard
+                key={project.id}
+                project={project}
                 index={index}
                 isFlipped={flippedCard === project.id}
                 setFlipped={setFlippedCard}
@@ -355,19 +392,23 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
     >
       <div
         className={`relative h-full w-full transition-all duration-700 [transform-style:preserve-3d] ${
-          isFlipped ? '[transform:rotateY(180deg)]' : '[transform:rotateY(0deg)]'
+          isFlipped
+            ? "[transform:rotateY(180deg)]"
+            : "[transform:rotateY(0deg)]"
         }`}
       >
         {/* Front of card */}
         <div
           className={`absolute inset-0 h-full w-full rounded-2xl overflow-hidden border border-slate-700/60
             bg-gradient-to-br from-slate-800 to-slate-900 backdrop-blur-xl
-            transition-all duration-700 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}
+            transition-all duration-700 ${
+              isFlipped ? "opacity-0" : "opacity-100"
+            }`}
         >
           {/* Project image */}
           <div className="absolute inset-0 flex items-center justify-center p-4">
-            <img 
-              src={project.image} 
+            <img
+              src={project.image}
               alt={project.title}
               className="max-w-full max-h-full object-contain rounded-md"
             />
@@ -391,10 +432,12 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
 
           {/* Content */}
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
+            <h3 className="text-xl font-bold mb-2 text-white">
+              {project.title}
+            </h3>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, i) => (
-                <span 
+                <span
                   key={i}
                   className="px-2 py-1 text-xs bg-indigo-900/50 text-indigo-300 rounded-full"
                 >
@@ -408,7 +451,9 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
               transition={{ delay: 0.5 }}
               className="flex justify-between items-center"
             >
-              <span className="text-slate-300 text-sm">Hover to see details</span>
+              <span className="text-slate-300 text-sm">
+                Hover to see details
+              </span>
               <div className="flex gap-2">
                 <motion.a
                   whileHover={{ scale: 1.1 }}
@@ -433,17 +478,19 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
         <div
           className={`absolute inset-0 h-full w-full rounded-2xl overflow-hidden border border-slate-700/60
             bg-gradient-to-br from-slate-800 to-slate-900 backdrop-blur-xl p-6 flex flex-col
-            transition-all duration-700 [transform:rotateY(180deg)] ${!isFlipped ? 'opacity-0' : 'opacity-100'}`}
+            transition-all duration-700 [transform:rotateY(180deg)] ${
+              !isFlipped ? "opacity-0" : "opacity-100"
+            }`}
         >
           <h3 className="text-xl font-bold mb-4 text-white">{project.title}</h3>
-          
+
           <p className="text-slate-300 mb-6 flex-grow">{project.description}</p>
-          
+
           <div className="mb-6">
             <h4 className="font-semibold mb-3 text-indigo-300">Features</h4>
             <ul className="space-y-2">
               {project.features.map((feature, i) => (
-                <motion.li 
+                <motion.li
                   key={i}
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
@@ -456,7 +503,7 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
               ))}
             </ul>
           </div>
-          
+
           <div className="mt-auto flex justify-between items-center">
             <div className="flex gap-2">
               {project.icons.map((Icon, i) => (
@@ -465,7 +512,7 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
                 </div>
               ))}
             </div>
-            
+
             <div className="flex gap-3">
               <motion.a
                 whileHover={{ scale: 1.05 }}
