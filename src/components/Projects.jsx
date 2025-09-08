@@ -318,7 +318,7 @@ const Projects = () => {
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <div className="w-[300px] h-auto max-h-[400px] overflow-hidden rounded-lg bg-slate-950 border border-slate-700 shadow-2xl">
+                <div className="w-[700px] h-auto max-h-[900px] overflow-hidden rounded-lg bg-slate-950 border border-slate-700 shadow-2xl">
                   <img
                     src={focusedItem.url}
                     alt={focusedItem.label}
