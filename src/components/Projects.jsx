@@ -25,8 +25,8 @@ const visualData = [
     key: 1,
     url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216017/Screenshot_2025-09-07_091826_w6iplj.png",
     label: "Groceezy",
-    liveUrl: "https://groceezy.kojing.me/", // Add your actual project URL here
-    githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0" // Add your actual GitHub URL here
+    liveUrl: "https://groceezy.kojing.me/",
+    githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0" 
   },
   {
     key: 2,
