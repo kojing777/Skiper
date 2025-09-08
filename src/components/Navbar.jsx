@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -7,11 +8,27 @@ import {
   FaFileDownload,
 } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const location = useLocation();
   const [activeLink, setActiveLink] = useState("Home");
+
+  useEffect(() => {
+    // Set active link based on current pathname
+    const pathToName = {
+      "/": "Home",
+      "/projects": "Projects",
+      "/skills": "Skills",
+      "/experience": "Experience",
+      "/contact": "Contact",
+      "/about": "About",
+    };
+    setActiveLink(pathToName[location.pathname] || "Home");
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +40,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
     { name: "Projects", path: "/projects" },
     { name: "Skills", path: "/skills" },
     { name: "Experience", path: "/experience" },
@@ -141,28 +159,27 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1 mx-auto">
           {navLinks.map((link, index) => (
-            <motion.a
-              key={index}
-              href={link.path}
-              className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full
-              ${
-                activeLink === link.name
-                  ? "text-white bg-slate-800/50"
-                  : "text-slate-300 hover:text-white hover:bg-slate-800/30"
-              }`}
-              onClick={() => setActiveLink(link.name)}
-              whileHover={{ y: -2 }}
-              whileTap={{ y: 0 }}
-            >
-              {link.name}
-              {activeLink === link.name && (
-                <motion.span
-                  className="absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
-                  layoutId="activeLink"
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                />
-              )}
-            </motion.a>
+            <motion.div key={index} whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+              <Link
+                to={link.path}
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full
+                  ${
+                    activeLink === link.name
+                      ? "text-white bg-slate-800/50"
+                      : "text-slate-300 hover:text-white hover:bg-slate-800/30"
+                  }`}
+                onClick={() => setActiveLink(link.name)}
+              >
+                {link.name}
+                {activeLink === link.name && (
+                  <motion.span
+                    className="absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+                    layoutId="activeLink"
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  />
+                )}
+              </Link>
+            </motion.div>
           ))}
         </div>
 
@@ -230,24 +247,23 @@ const Navbar = () => {
               rounded-2xl p-6 flex flex-col items-center gap-4 shadow-xl md:hidden"
             >
               {navLinks.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href={link.path}
-                  className={`w-full text-center py-3 px-4 rounded-lg transition-all duration-300
-                  ${
-                    activeLink === link.name
-                      ? "bg-gradient-to-r from-indigo-600/20 to-purple-600/20 text-white"
-                      : "text-slate-300 hover:text-white hover:bg-slate-800/50"
-                  }`}
-                  onClick={() => {
-                    setActiveLink(link.name);
-                    setIsMenuOpen(false);
-                  }}
-                  whileHover={{ x: 5 }}
-                  whileTap={{ x: 0 }}
-                >
-                  {link.name}
-                </motion.a>
+                <motion.div key={index} whileHover={{ x: 5 }} whileTap={{ x: 0 }}>
+                  <Link
+                    to={link.path}
+                    className={`w-full text-center py-3 px-4 rounded-lg transition-all duration-300
+                      ${
+                        activeLink === link.name
+                          ? "bg-gradient-to-r from-indigo-600/20 to-purple-600/20 text-white"
+                          : "text-slate-300 hover:text-white hover:bg-slate-800/50"
+                      }`}
+                    onClick={() => {
+                      setActiveLink(link.name);
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
 
               <div className="flex flex-col gap-3 w-full items-center mt-2">
