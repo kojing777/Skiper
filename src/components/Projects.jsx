@@ -97,7 +97,7 @@ const Projects = () => {
       title: "Groceezy",
       description: "A modern grocery delivery platform that connects local stores with customers. Features real-time inventory tracking, smart recommendations, and seamless checkout process.",
       features: ["User Authentication", "Payment Integration", "Admin Dashboard", "Product Management"],
-      technologies: ["MongoDB", "Express", "React", "Tailwind CSS"],
+      technologies: ["MongoDB", "Express", "React","Node.js", "Tailwind CSS"],
       icons: [FaReact, FaNodeJs, SiMongodb, FaServer],
       githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0",
       liveUrl: "https://groceezy.kojing.me/",
@@ -119,22 +119,22 @@ const Projects = () => {
       title: "MeubelHouse",
       description: "An elegant furniture e-commerce experience with AR preview functionality. Customers can visualize products in their space before purchasing, with filters for style, room, and dimensions",
       features: ["Data Visualization", "Analytics", "User Reports", "Custom Metrics"],
-      technologies: ["Next.js", "TypeScript", "Chart.js", "MongoDB"],
-      icons: [SiNextdotjs, SiTypescript, FaDatabase, FaServer],
+      technologies: ["MongoDB", "Express", "React","Node.js", "Tailwind CSS"],
+      icons: [FaReact, FaNodeJs, SiMongodb, FaServer],
       githubUrl: "https://github.com/kojing777/MeubelHouse",
       liveUrl: "https://meubel-house-iota.vercel.app/",
       image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png"
     },
     {
       id: 4,
-      title: "Fitness Tracker",
-      description: "A mobile-friendly fitness application with workout plans, progress tracking, and social features.",
+      title: "Portfolio",
+      description: "My responsive developer portfolio showcasing projects, skills, and experience. Built with modern web technologies and featuring interactive elements and smooth animations.",
       features: ["Workout Plans", "Progress Tracking", "Social Features", "Mobile Optimized"],
-      technologies: ["React Native", "Node.js", "MongoDB", "Express"],
+      technologies: ["React", "Tailwind CSS", "Framer Motion", ""],
       icons: [FaMobile, FaNodeJs, SiMongodb, SiExpress],
-      githubUrl: "#",
-      liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      githubUrl: "https://github.com/kojing777/Skiper",
+      liveUrl: "https://portfolio-wine-alpha-82.vercel.app/",
+      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216059/Screenshot_2025-09-07_091908_gjnpqc.png"
     }
   ];
 
