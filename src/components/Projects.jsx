@@ -24,17 +24,17 @@ import { MoveUpRight } from "lucide-react";
 const visualData = [
   {
     key: 1,
-    url: "https://images.pexels.com/photos/9002742/pexels-photo-9002742.jpeg",
-    label: "Pinky Island",
+    url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216017/Screenshot_2025-09-07_091826_w6iplj.png",
+    label: "Groceezy",
   },
   {
     key: 2,
-    url: "https://images.pexels.com/photos/31622979/pexels-photo-31622979.jpeg",
-    label: "Greedy Model",
+    url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png",
+    label: "MeubelHouse",
   },
   {
     key: 3,
-    url: "https://images.pexels.com/photos/12187128/pexels-photo-12187128.jpeg",
+    url: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png",
     label: "Sigma Connect",
   },
   {
