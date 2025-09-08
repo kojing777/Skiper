@@ -155,7 +155,7 @@ const Projects = () => {
         "Responsive design",
         "Performance optimized",
       ],
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Tailwindcss"],
+      technologies: ["React", "Tailwind CSS", "Framer Motion",],
       icons: [FaMobile, FaReact, TbBrandFramerMotion, SiTailwindcss],
       githubUrl: "https://github.com/kojing777/Skiper",
       liveUrl: "https://portfolio-wine-alpha-82.vercel.app/",
