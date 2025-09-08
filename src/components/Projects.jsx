@@ -81,47 +81,47 @@ const ProjectsShowcase = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Groceezy",
       description: "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
       features: ["User Authentication", "Payment Integration", "Admin Dashboard", "Product Management"],
       technologies: ["React", "Node.js", "MongoDB", "Stripe"],
       icons: [FaReact, FaNodeJs, SiMongodb, FaServer],
       githubUrl: "#",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216017/Screenshot_2025-09-07_091826_w6iplj.png"
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "MeubelHouse",
       description: "A collaborative task management application with real-time updates and team collaboration features.",
       features: ["Real-time Updates", "Team Collaboration", "Drag & Drop", "Notifications"],
       technologies: ["React", "Firebase", "Tailwind CSS", "Context API"],
       icons: [FaReact, SiFirebase, SiTailwindcss, FaMobile],
       githubUrl: "#",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png"
     },
     {
       id: 3,
-      title: "Social Media Dashboard",
+      title: "fra-cheur",
       description: "A comprehensive dashboard for social media analytics with data visualization and reporting.",
       features: ["Data Visualization", "Analytics", "User Reports", "Custom Metrics"],
       technologies: ["Next.js", "TypeScript", "Chart.js", "MongoDB"],
       icons: [SiNextdotjs, SiTypescript, FaDatabase, FaServer],
       githubUrl: "#",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png"
     },
     {
       id: 4,
-      title: "Fitness Tracker",
+      title: "portfolio",
       description: "A mobile-friendly fitness application with workout plans, progress tracking, and social features.",
       features: ["Workout Plans", "Progress Tracking", "Social Features", "Mobile Optimized"],
       technologies: ["React Native", "Node.js", "MongoDB", "Express"],
       icons: [FaMobile, FaNodeJs, SiMongodb, SiExpress],
-      githubUrl: "#",
-      liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      githubUrl: "https://github.com/kojing777/Skiper",
+      liveUrl: "https://portfolio-wine-alpha-82.vercel.app/",
+      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757216059/Screenshot_2025-09-07_091908_gjnpqc.png"
     }
   ];
 
@@ -253,7 +253,7 @@ const ProjectsShowcase = () => {
                   <img
                     src={focusedItem.url}
                     alt={focusedItem.label}
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto object-cover"
                   />
                 </div>
               </motion.div>
@@ -283,6 +283,7 @@ const ProjectsShowcase = () => {
 };
 
 // Project Card Component
+// Project Card Component
 const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
   return (
     <motion.div
@@ -304,14 +305,14 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
             bg-gradient-to-br from-slate-800 to-slate-900 backdrop-blur-xl
             transition-all duration-700 ${isFlipped ? 'opacity-0' : 'opacity-100'}`}
         >
-          {/* Project image */}
-          <div className="absolute inset-0">
+          {/* Project image - UPDATED */}
+          <div className="absolute inset-0 flex items-center justify-center p-4">
             <img 
               src={project.image} 
               alt={project.title}
-              className="w-full h-full object-cover opacity-70"
+              className="max-w-full max-h-full object-contain rounded-md"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-slate-900/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/30 to-slate-900/10"></div>
           </div>
 
           {/* Tech icons floating animation */}
