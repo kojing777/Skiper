@@ -11,6 +11,12 @@ import {
   FaMobile,
   FaServer
 } from "react-icons/fa";
+import { FaHtml5 } from "react-icons/fa";
+import { FaJsSquare } from "react-icons/fa";
+import { SiCss3 } from "react-icons/si";
+
+
+
 import { 
   SiMongodb, 
   SiExpress, 
@@ -89,9 +95,9 @@ const Projects = () => {
     {
       id: 1,
       title: "Groceezy",
-      description: "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
+      description: "A modern grocery delivery platform that connects local stores with customers. Features real-time inventory tracking, smart recommendations, and seamless checkout process.",
       features: ["User Authentication", "Payment Integration", "Admin Dashboard", "Product Management"],
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      technologies: ["MongoDB", "Express", "React", "Tailwind CSS"],
       icons: [FaReact, FaNodeJs, SiMongodb, FaServer],
       githubUrl: "https://github.com/kojing777/Groceezy-Frontend-v1.0",
       liveUrl: "https://groceezy.kojing.me/",
@@ -99,25 +105,25 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Fra-cheur",
       description: "A collaborative task management application with real-time updates and team collaboration features.",
       features: ["Real-time Updates", "Team Collaboration", "Drag & Drop", "Notifications"],
-      technologies: ["React", "Firebase", "Tailwind CSS", "Context API"],
-      icons: [FaReact, SiFirebase, SiTailwindcss, FaMobile],
-      githubUrl: "#",
-      liveUrl: "#",
+      technologies: ["HTML", "CSS", "JS",],
+      icons: [FaHtml5, SiCss3, FaJsSquare, FaMobile],
+      githubUrl: "https://github.com/kojing777/Fra-cheur-v1.1",
+      liveUrl: "https://fra-cheur.vercel.app/",
       image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757217075/Screenshot_2025-09-07_093517_ancuhs.png"
     },
     {
       id: 3,
-      title: "Social Media Dashboard",
-      description: "A comprehensive dashboard for social media analytics with data visualization and reporting.",
+      title: "MeubelHouse",
+      description: "An elegant furniture e-commerce experience with AR preview functionality. Customers can visualize products in their space before purchasing, with filters for style, room, and dimensions",
       features: ["Data Visualization", "Analytics", "User Reports", "Custom Metrics"],
       technologies: ["Next.js", "TypeScript", "Chart.js", "MongoDB"],
       icons: [SiNextdotjs, SiTypescript, FaDatabase, FaServer],
-      githubUrl: "#",
-      liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      githubUrl: "https://github.com/kojing777/MeubelHouse",
+      liveUrl: "https://meubel-house-iota.vercel.app/",
+      image: "https://res.cloudinary.com/dp27ua535/image/upload/v1757215916/Screenshot_2025-09-07_091455_k50kfz.png"
     },
     {
       id: 4,
