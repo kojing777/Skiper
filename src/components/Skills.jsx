@@ -79,7 +79,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+  <section className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden pt-20">
       <AnimatedBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -96,10 +96,7 @@ const Skills = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            Technical{" "}
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
-              Stack
-            </span>
+            My <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">Skills</span>
           </motion.h1>
 
           <motion.p
@@ -108,7 +105,7 @@ const Skills = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            The tools and technologies I use to build modern web applications
+            Explore the technologies and tools I specialize in. This section is all about my personal skills and development toolkit.
           </motion.p>
         </motion.div>
 

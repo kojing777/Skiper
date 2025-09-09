@@ -262,7 +262,7 @@ const AboutMe = () => {
   const isInView = useInView(aboutRef, { once: true, amount: 0.3 });
 
   return (
-    <section className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+  <section className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden pt-20">
       <AnimatedBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto">
