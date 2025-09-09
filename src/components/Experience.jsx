@@ -102,7 +102,7 @@ const Experience = () => {
   };
 
   return (
-    <section className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-slate-950 text-white overflow-hidden">
+  <section id="experience" className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-slate-950 text-white overflow-hidden">
       
       {/* Simplified Background - Reduced animations and effects */}
       <div className="absolute inset-0 overflow-hidden">

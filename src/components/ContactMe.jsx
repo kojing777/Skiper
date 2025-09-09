@@ -76,7 +76,7 @@ const ContactMe = () => {
   };
 
   return (
-    <section className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+  <section id="contact" className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
       {/* Optimized background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Subtle floating shapes - reduced animation complexity */}

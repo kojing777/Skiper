@@ -160,15 +160,23 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-1 mx-auto">
           {navLinks.map((link, index) => (
             <motion.div key={index} whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
-              <Link
-                to={link.path}
+              <button
+                type="button"
                 className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full
                   ${
                     activeLink === link.name
                       ? "text-white bg-slate-800/50"
                       : "text-slate-300 hover:text-white hover:bg-slate-800/30"
                   }`}
-                onClick={() => setActiveLink(link.name)}
+                onClick={() => {
+                  setActiveLink(link.name);
+                  let sectionId = link.name.toLowerCase();
+                  if (sectionId === "home") sectionId = "top";
+                  const section = document.getElementById(sectionId);
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 {link.name}
                 {activeLink === link.name && (
@@ -178,7 +186,7 @@ const Navbar = () => {
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   />
                 )}
-              </Link>
+              </button>
             </motion.div>
           ))}
         </div>

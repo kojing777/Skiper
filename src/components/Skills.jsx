@@ -79,7 +79,7 @@ const Skills = () => {
   ];
 
   return (
-  <section className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden pt-20">
+  <section id="skills" className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden pt-20">
       <AnimatedBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto">
