@@ -150,7 +150,7 @@ const Footer = () => {
             <Linkedin size={20} />
           </motion.a>
           <motion.a
-            href="kojingmoktan92@gmail.com"
+            href="mailto:kojingmoktan92@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2, y: -3 }}
