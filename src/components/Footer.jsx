@@ -94,8 +94,6 @@ const Footer = () => {
           </h2>
           <p className="text-sm text-slate-400 mt-1">MERN Stack Developer.</p>
         </motion.div>
-
-        {/* Navigation Links */}
         
         {/* Navigation Links */}
         <motion.ul
@@ -124,7 +122,6 @@ const Footer = () => {
           ))}
         </motion.ul>
 
-
         {/* Social Icons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -133,17 +130,45 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex gap-4"
         >
-          {[Github, Linkedin, Twitter, Mail, Globe].map((Icon, idx) => (
-            <motion.a
-              key={idx}
-              href="#"
-              whileHover={{ scale: 1.2, y: -3 }}
-              className="p-2 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-indigo-400 transition"
-            >
-              <Icon size={20} />
-            </motion.a>
-          ))}
+          {/* Update these URLs with your actual profiles */}
+          <motion.a
+            href="https://github.com/kojing777"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, y: -3 }}
+            className="p-2 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-indigo-400 transition"
+          >
+            <Github size={20} />
+          </motion.a>
+          <motion.a
+            href="https://linkedin.com/in"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, y: -3 }}
+            className="p-2 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-indigo-400 transition"
+          >
+            <Linkedin size={20} />
+          </motion.a>
+          <motion.a
+            href="kojingmoktan92@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, y: -3 }}
+            className="p-2 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-indigo-400 transition"
+          >
+            <Mail size={20} />
+          </motion.a>
+          <motion.a
+            href="https://portfolio-wine-alpha-82.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, y: -3 }}
+            className="p-2 rounded-full bg-slate-800/50 border border-slate-700/50 text-slate-400 hover:text-indigo-400 transition"
+          >
+            <Globe size={20} />
+          </motion.a>
         </motion.div>
+
       </div>
 
       {/* Bottom Bar */}
