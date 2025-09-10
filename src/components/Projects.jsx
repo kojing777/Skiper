@@ -360,7 +360,7 @@ const Projects = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
           >
             {projects.map((project, index) => (
               <ProjectCard
@@ -385,7 +385,7 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative h-[400px] w-full [perspective:2000px]"
+      className="group relative h-[340px] sm:h-[400px] w-full [perspective:2000px]"
       onMouseEnter={() => setFlipped(project.id)}
       onMouseLeave={() => setFlipped(null)}
     >
@@ -405,7 +405,7 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
             }`}
         >
           {/* Project image */}
-          <div className="absolute inset-0 flex items-center justify-center p-4">
+          <div className="absolute inset-0 flex items-center justify-center p-2 sm:p-4">
             <img
               src={project.image}
               alt={project.title}
@@ -415,26 +415,26 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
           </div>
 
           {/* Tech icons floating animation */}
-          <div className="absolute top-4 right-4 flex gap-2">
+          <div className="absolute top-2 sm:top-4 right-2 sm:right-4 flex gap-1 sm:gap-2">
             {project.icons.map((Icon, i) => (
               <motion.div
                 key={i}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: i * 0.1 + 0.3 }}
-                className="p-2 bg-slate-800/80 rounded-full backdrop-blur-sm"
+                className="p-1 sm:p-2 bg-slate-800/80 rounded-full backdrop-blur-sm"
               >
-                <Icon className="text-lg text-indigo-400" />
+                <Icon className="text-base sm:text-lg text-indigo-400" />
               </motion.div>
             ))}
           </div>
 
           {/* Content */}
-          <div className="absolute bottom-0 left-0 right-0 p-6">
-            <h3 className="text-xl font-bold mb-2 text-white">
+          <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-white">
               {project.title}
             </h3>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-4">
               {project.technologies.map((tech, i) => (
                 <span
                   key={i}
@@ -448,25 +448,25 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex justify-between items-center"
+              className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2"
             >
-              <span className="text-slate-300 text-sm">
+              <span className="text-slate-300 text-xs sm:text-sm">
                 Hover to see details
               </span>
-              <div className="flex gap-2">
+              <div className="flex gap-1 sm:gap-2">
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   href={project.githubUrl}
                   className="p-2 bg-slate-800/80 rounded-full backdrop-blur-sm"
                 >
-                  <FaGithub className="text-lg text-white" />
+                  <FaGithub className="text-base sm:text-lg text-white" />
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   href={project.liveUrl}
                   className="p-2 bg-slate-800/80 rounded-full backdrop-blur-sm"
                 >
-                  <FaExternalLinkAlt className="text-lg text-white" />
+                  <FaExternalLinkAlt className="text-base sm:text-lg text-white" />
                 </motion.a>
               </div>
             </motion.div>
@@ -476,27 +476,27 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
         {/* Back of card */}
         <div
           className={`absolute inset-0 h-full w-full rounded-2xl overflow-hidden border border-slate-700/60
-            bg-gradient-to-br from-slate-800 to-slate-900 backdrop-blur-xl p-6 flex flex-col
+            bg-gradient-to-br from-slate-800 to-slate-900 backdrop-blur-xl p-3 sm:p-6 flex flex-col
             transition-all duration-700 [transform:rotateY(180deg)] ${
               !isFlipped ? "opacity-0" : "opacity-100"
             }`}
         >
-          <h3 className="text-xl font-bold mb-4 text-white">{project.title}</h3>
+          <h3 className="text-lg sm:text-xl font-bold mb-4 text-white">{project.title}</h3>
 
-          <p className="text-slate-300 mb-6 flex-grow">{project.description}</p>
+          <p className="text-slate-300 mb-4 sm:mb-6 flex-grow text-xs sm:text-base">{project.description}</p>
 
-          <div className="mb-6">
-            <h4 className="font-semibold mb-3 text-indigo-300">Features</h4>
-            <ul className="space-y-2">
+          <div className="mb-4 sm:mb-6">
+            <h4 className="font-semibold mb-2 sm:mb-3 text-indigo-300 text-xs sm:text-base">Features</h4>
+            <ul className="space-y-1 sm:space-y-2">
               {project.features.map((feature, i) => (
                 <motion.li
                   key={i}
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center text-sm text-slate-400"
+                  className="flex items-center text-xs sm:text-sm text-slate-400"
                 >
-                  <span className="w-2 h-2 bg-indigo-500 rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-indigo-500 rounded-full mr-2 sm:mr-3"></span>
                   {feature}
                 </motion.li>
               ))}
@@ -504,19 +504,19 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
           </div>
 
           <div className="mt-auto flex justify-between items-center">
-            <div className="flex gap-2">
+            <div className="flex gap-1 sm:gap-2">
               {project.icons.map((Icon, i) => (
-                <div key={i} className="p-2 bg-slate-800/80 rounded-full">
-                  <Icon className="text-lg text-indigo-400" />
+                <div key={i} className="p-1 sm:p-2 bg-slate-800/80 rounded-full">
+                  <Icon className="text-base sm:text-lg text-indigo-400" />
                 </div>
               ))}
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 href={project.githubUrl}
-                className="px-4 py-2 rounded-full bg-slate-800 text-sm font-medium flex items-center gap-2 text-white"
+                className="px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-slate-800 text-xs sm:text-sm font-medium flex items-center gap-1 sm:gap-2 text-white"
               >
                 <FaGithub />
                 Code
@@ -524,7 +524,7 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 href={project.liveUrl}
-                className="px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-sm font-medium flex items-center gap-2 text-white"
+                className="px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-xs sm:text-sm font-medium flex items-center gap-1 sm:gap-2 text-white"
               >
                 <FaExternalLinkAlt />
                 Live Demo
