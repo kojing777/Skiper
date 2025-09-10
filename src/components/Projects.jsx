@@ -266,7 +266,7 @@ const Projects = () => {
                   {item.label}
                 </h2>
 
-                {/* Updated button with links */}
+                
                 <div
                   className={`sm:flex hidden items-center gap-3 transition-all duration-300 ease-out ${
                     focusedItem?.key === item.key
@@ -275,7 +275,7 @@ const Projects = () => {
                   }`}
                 >
                   {/* GitHub Link */}
-                  <motion.a
+                  <motion.a target="_blank"
                     href={item.githubUrl}
                     whileHover={{ scale: 1.1 }}
                     className="p-2 rounded-full hover:bg-slate-700/50 transition-colors"
@@ -285,7 +285,7 @@ const Projects = () => {
                   </motion.a>
 
                   {/* Live Project Link */}
-                  <motion.a
+                  <motion.a target="_blank"
                     href={item.liveUrl}
                     whileHover={{ scale: 1.1 }}
                     className="p-2 rounded-full hover:bg-slate-700/50 transition-colors flex items-center gap-1"
@@ -318,7 +318,7 @@ const Projects = () => {
                 exit={{ opacity: 0, scale: 0.5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <div className="w-[700px] h-auto max-h-[900px] overflow-hidden rounded-lg bg-slate-950 border border-slate-700 shadow-2xl">
+                <div className="w-[500px] h-auto max-h-[700px] overflow-hidden rounded-lg bg-slate-950 border border-slate-700 shadow-2xl">
                   <img
                     src={focusedItem.url}
                     alt={focusedItem.label}
