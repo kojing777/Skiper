@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { FaHeart, FaLightbulb } from "react-icons/fa";
 import createGlobe from "cobe";
 
-// Background Component (Shared between sections)
+// Background Component
 const AnimatedBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -34,7 +34,6 @@ const AnimatedBackground = () => {
         className="absolute bottom-1/3 left-1/4 w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-500/15 to-blue-500/15 blur-sm"
       />
 
-      {/* Grid */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiMzMzM4NDIiIHN0cm9rZS13aWR0aD0iMSI+PHBhdGggZD0iTTAgMEg2MFY2MEgwWiIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
     </div>
   );
