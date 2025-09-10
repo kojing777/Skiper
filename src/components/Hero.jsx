@@ -1,6 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+// Smooth scroll handler
+const handleSmoothScroll = (e, targetId) => {
+  e.preventDefault();
+  const el = document.getElementById(targetId);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { FaGithub, FaLinkedin, FaTwitter, FaFileDownload } from "react-icons/fa";
@@ -187,21 +195,25 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 transition-all font-medium flex items-center gap-2 shadow-lg shadow-indigo-500/20"
-          >
-            View Projects
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 rounded-full border border-slate-600 hover:border-indigo-500 transition-all font-medium flex items-center gap-2"
-          >
-            <HiMail className="text-lg" />
-            Contact Me
-          </motion.button>
+            <a href="#projects" onClick={e => handleSmoothScroll(e, "projects")}> 
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 transition-all font-medium flex items-center gap-2 shadow-lg shadow-indigo-500/20"
+              >
+                View Projects
+              </motion.button>
+            </a>
+            <a href="#contact" onClick={e => handleSmoothScroll(e, "contact")}> 
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 rounded-full border border-slate-600 hover:border-indigo-500 transition-all font-medium flex items-center gap-2"
+              >
+                <HiMail className="text-lg" />
+                Contact Me
+              </motion.button>
+            </a>
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -222,7 +234,7 @@ const Hero = () => {
         >
           <motion.a
             whileHover={{ y: -5, scale: 1.1 }}
-            href="https://github.com"
+            href="https://github.com/kojing777"
             target="_blank"
             className="p-3 rounded-full bg-slate-800 hover:bg-indigo-600 transition-colors"
             aria-label="GitHub"
