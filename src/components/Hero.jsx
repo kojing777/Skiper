@@ -217,7 +217,8 @@ const Hero = () => {
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="#"
+            href="/Bijaya%20Tamang.pdf"
+            download
             className="px-6 py-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-all font-medium flex items-center gap-2"
           >
             <FaFileDownload className="text-lg" />
