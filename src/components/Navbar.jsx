@@ -213,10 +213,15 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <button className="px-5 py-2 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center gap-2">
+            <a
+              href="mailto:yourgmailaddress@gmail.com?subject=Hire%20Me%20Inquiry"
+              className="px-5 py-2 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center gap-2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <HiMail className="text-sm" />
               <span>Hire Me</span>
-            </button>
+            </a>
           </motion.div>
         </div>
 
@@ -275,7 +280,7 @@ const Navbar = () => {
               ))}
 
               <div className="flex flex-col gap-3 w-full items-center mt-2">
-                <motion.div
+                {/* <motion.div
                   className="blue-border relative z-0 w-full max-w-xs overflow-hidden p-0.5 flex items-center justify-center rounded-full"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -284,17 +289,22 @@ const Navbar = () => {
                     <FaFileDownload className="text-sm" />
                     <span>Download CV</span>
                   </button>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
                   className="rainbow-border relative z-0 w-full max-w-xs overflow-hidden p-0.5 flex items-center justify-center rounded-full"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <button className="w-full px-4 py-3 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center justify-center gap-2">
+                  <a
+                    href="kojingmoktan92@gmail.com?subject=Hire%20Me%20Inquiry"
+                    className="w-full px-4 py-3 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center justify-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <HiMail className="text-sm" />
                     <span>Hire Me</span>
-                  </button>
+                  </a>
                 </motion.div>
               </div>
             </motion.div>
