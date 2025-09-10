@@ -157,13 +157,6 @@ const Footer = () => {
         <p className="text-sm text-slate-500">
           © {new Date().getFullYear()} Bijaya Tamang. All rights reserved.
         </p>
-        {/* <p className="text-xs mt-2 text-slate-600">
-          Built with{" "}
-          <span className="text-green-400 font-semibold">MongoDB</span>,{" "}
-          <span className="text-blue-400 font-semibold">Express</span>,{" "}
-          <span className="text-cyan-400 font-semibold">React</span>,{" "}
-          <span className="text-yellow-400 font-semibold">Node.js</span>
-        </p> */}
       </motion.div>
 
       {/* Scroll to Top Button */}
