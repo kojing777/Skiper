@@ -1,6 +1,36 @@
-import React, { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
-import { FaHeart, FaLightbulb } from "react-icons/fa";
+import React, { useRef, useEffect, useState } from "react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaCode,
+  FaTools,
+  FaServer,
+  FaMobile,
+  FaCloud,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaGitAlt,
+  FaFigma,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaGlobe,
+  FaRocket,
+  FaLightbulb,
+  FaHeart,
+} from "react-icons/fa";
+import { SiRender } from "react-icons/si";
+
+import {
+  SiMongodb,
+  SiExpress,
+  SiTailwindcss,
+  SiVercel,
+  SiPostman,
+} from "react-icons/si";
 import createGlobe from "cobe";
 
 // Background Component (Shared between sections)
@@ -232,7 +262,7 @@ const AboutMe = () => {
   const isInView = useInView(aboutRef, { once: true, amount: 0.3 });
 
   return (
-    <section id="about" className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden pt-20">
+  <section id="about" className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden pt-20">
       <AnimatedBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -535,4 +565,153 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+// TechnicalStack Component
+const TechnicalStack = () => {
+  const skillsRef = useRef(null);
+  const isInView = useInView(skillsRef, { once: true, amount: 0.3 });
+
+  // Tech stack icons
+  const techStack = [
+    { icon: <FaHtml5 className="text-orange-500" />, name: "HTML5" },
+    { icon: <SiMongodb className="text-green-600" />, name: "MongoDB" },
+    { icon: <SiExpress className="text-gray-400" />, name: "Express" },
+    { icon: <FaReact className="text-sky-400" />, name: "React" },
+    { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
+    { icon: <FaCss3Alt className="text-blue-500" />, name: "CSS3" },
+    { icon: <SiTailwindcss className="text-cyan-400" />, name: "TailwindCSS" },
+    { icon: <FaJs className="text-yellow-400" />, name: "JavaScript" },
+    { icon: <FaDatabase className="text-purple-400" />, name: "Database" },
+    { icon: <FaGitAlt className="text-orange-600" />, name: "Git" },
+  ];
+
+  // Tools icons
+  const toolsStack = [
+    { icon: <FaGithub className="text-gray-200" />, name: "GitHub" },
+    { icon: <SiPostman className="text-orange-500" />, name: "Postman" },
+    { icon: <SiVercel className="text-gray-200" />, name: "Vercel" },
+    { icon: <SiRender className="text-purple-500" />, name: "Render" },
+  ];
+
+  return (
+    <section className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+      <AnimatedBackground />
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Header Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mx-auto mb-10 text-center"
+        >
+          <motion.h1
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Technical{" "}
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
+              Stack
+            </span>
+          </motion.h1>
+
+          <motion.p
+            className="text-xl max-w-3xl mx-auto text-slate-300 mb-6"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            The tools and technologies I use to build modern web applications
+          </motion.p>
+        </motion.div>
+
+        {/* Technical Stack Section */}
+        <div ref={skillsRef} className="mb-12">
+          {/* <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-12 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+              <FaCode className="text-purple-400" />
+              Technical <span className="text-purple-400">Stack</span>
+            </h2>
+            <p className="text-slate-300 max-w-2xl mx-auto">
+              The tools and technologies I use to build modern web applications
+            </p>
+          </motion.div> */}
+
+          {/* Tech Stack Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
+            {techStack.map((tech, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                className="flex flex-col items-center justify-center bg-gradient-to-b from-slate-800 to-slate-900 p-4 rounded-xl border border-slate-700/50 shadow-md hover:shadow-lg transition-shadow"
+              >
+                <div className="text-4xl mb-2">{tech.icon}</div>
+                <p className="text-lg font-medium text-center">{tech.name}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
+            className="mt-12 text-center"
+          >
+            <h3 className="text-2xl font-bold mb-6 flex items-center justify-center gap-3">
+              <FaTools className="text-cyan-400" />
+              Development <span className="text-cyan-400">Tools</span>
+            </h3>
+
+            <div className="flex flex-wrap justify-center gap-6 max-w-2xl mx-auto">
+              {toolsStack.map((tool, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: 0.8 + idx * 0.1, duration: 0.5 }}
+                  className="flex flex-col items-center justify-center bg-gradient-to-b from-slate-800 to-slate-900 p-4 rounded-xl border border-slate-700/50 shadow-md min-w-[120px]"
+                >
+                  <div className="text-3xl mb-2">{tool.icon}</div>
+                  <p className="font-medium text-center">{tool.name}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Call to Action Section */}
+        {/* <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            Want to <span className="text-purple-400">See More</span>?
+          </h2>
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+            Check out my projects to see these technologies in action.
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300"
+          >
+            View Portfolio
+          </motion.button>
+        </motion.div> */}
+      </div>
+    </section>
+  );
+};
+
+export { AboutMe, TechnicalStack };
