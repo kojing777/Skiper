@@ -281,16 +281,19 @@ const ContactMe = () => {
                     icon: <Github size={20} />,
                     color: "hover:text-purple-400",
                     label: "GitHub",
+                    url: "https://github.com/kojing777",
                   },
                   {
                     icon: <Linkedin size={20} />,
                     color: "hover:text-blue-400",
                     label: "LinkedIn",
+                    url: "https://linkedin.com/in/",
                   },
                 ].map((item, index) => (
                   <motion.a
                     key={index}
-                    href="#"
+                    href={item.url}
+                    target="_blank"
                     variants={itemVariants}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
