@@ -115,7 +115,6 @@ const ContactMe = () => {
           className="absolute bottom-1/3 left-1/4 w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-500/15 to-blue-500/15 blur-sm"
         />
 
-        {/* Static grid pattern - no animation */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiMzMzM4NDIiIHN0cm9rZS13aWR0aD0iMSI+PHBhdGggZD0iTTAgMEg2MFY2MEgwWiIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
 
         {/* Static decorative elements instead of moving particles */}
@@ -174,12 +173,6 @@ const ContactMe = () => {
           </motion.p>
 
           {/* Animated decorative element */}
-          {/* <motion.div
-            animate={floatingAnimation}
-            className="flex justify-center mt-4"
-          >
-            <Sparkles className="text-yellow-400" size={28} />
-          </motion.div> */}
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -292,11 +285,6 @@ const ContactMe = () => {
                     icon: <Linkedin size={20} />,
                     color: "hover:text-blue-400",
                     label: "LinkedIn",
-                  },
-                  {
-                    icon: <Twitter size={20} />,
-                    color: "hover:text-cyan-400",
-                    label: "Twitter",
                   },
                 ].map((item, index) => (
                   <motion.a
