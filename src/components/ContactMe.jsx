@@ -7,11 +7,9 @@ import {
   Send,
   Github,
   Linkedin,
-  Twitter,
   User,
   ArrowRight,
   Heart,
-  Sparkles,
 } from "lucide-react";
 
 const ContactMe = () => {
@@ -76,7 +74,10 @@ const ContactMe = () => {
   };
 
   return (
-  <section id="contact" className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+    <section
+      id="contact"
+      className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden"
+    >
       {/* background elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Subtle floating shapes */}
@@ -117,7 +118,7 @@ const ContactMe = () => {
 
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiMzMzM4NDIiIHN0cm9rZS13aWR0aD0iMSI+PHBhdGggZD0iTTAgMEg2MFY2MEgwWiIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
 
-        {/* Static decorative elements instead of moving particles */}
+        {/* moving particles */}
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
@@ -441,7 +442,6 @@ const ContactMe = () => {
                         required
                       ></motion.textarea>
                     </motion.div>
-
                     <motion.button
                       whileHover={{
                         scale: 1.02,
