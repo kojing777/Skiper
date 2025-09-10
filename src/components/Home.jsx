@@ -1,8 +1,9 @@
 import React from 'react'
 import Hero from './Hero'
-import { AboutMe, TechnicalStack } from './AboutMe'
+import  AboutMe  from './AboutMe'
 import Footer from './Footer'
 import ContactMe from './ContactMe'
+import Skills from './Skills'
 import Experience from './Experience'
 import Projects from './Projects'
 
@@ -12,7 +13,7 @@ const Home = () => {
         <Hero />
         <AboutMe />
         <Projects />
-        <TechnicalStack />
+        <Skills />
         <Experience />
         <ContactMe />
     </div>
