@@ -156,7 +156,7 @@ const Skills = () => {
         </div>
 
         {/* Call to Action Section */}
-        <motion.div
+        {/* <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +176,7 @@ const Skills = () => {
           >
             View Portfolio
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
