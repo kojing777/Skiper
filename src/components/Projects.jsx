@@ -165,7 +165,10 @@ const Projects = () => {
   ];
 
   return (
-  <section id="projects" className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+    <section
+      id="projects"
+      className="relative min-h-screen py-20 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden"
+    >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Moving Gradient Bars */}
@@ -266,7 +269,6 @@ const Projects = () => {
                   {item.label}
                 </h2>
 
-                
                 <div
                   className={`sm:flex hidden items-center gap-3 transition-all duration-300 ease-out ${
                     focusedItem?.key === item.key
@@ -275,7 +277,8 @@ const Projects = () => {
                   }`}
                 >
                   {/* GitHub Link */}
-                  <motion.a target="_blank"
+                  <motion.a
+                    target="_blank"
                     href={item.githubUrl}
                     whileHover={{ scale: 1.1 }}
                     className="p-2 rounded-full hover:bg-slate-700/50 transition-colors"
@@ -285,7 +288,8 @@ const Projects = () => {
                   </motion.a>
 
                   {/* Live Project Link */}
-                  <motion.a target="_blank"
+                  <motion.a
+                    target="_blank"
                     href={item.liveUrl}
                     whileHover={{ scale: 1.1 }}
                     className="p-2 rounded-full hover:bg-slate-700/50 transition-colors flex items-center gap-1"
@@ -378,7 +382,7 @@ const Projects = () => {
   );
 };
 
-// Project Card Component (unchanged from your previous version)
+// Project Card Component
 const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
   return (
     <motion.div
@@ -457,6 +461,8 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 bg-slate-800/80 rounded-full backdrop-blur-sm"
                 >
                   <FaGithub className="text-base sm:text-lg text-white" />
@@ -464,6 +470,8 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 bg-slate-800/80 rounded-full backdrop-blur-sm"
                 >
                   <FaExternalLinkAlt className="text-base sm:text-lg text-white" />
@@ -481,12 +489,18 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
               !isFlipped ? "opacity-0" : "opacity-100"
             }`}
         >
-          <h3 className="text-lg sm:text-xl font-bold mb-4 text-white">{project.title}</h3>
+          <h3 className="text-lg sm:text-xl font-bold mb-4 text-white">
+            {project.title}
+          </h3>
 
-          <p className="text-slate-300 mb-4 sm:mb-6 flex-grow text-xs sm:text-base">{project.description}</p>
+          <p className="text-slate-300 mb-4 sm:mb-6 flex-grow text-xs sm:text-base">
+            {project.description}
+          </p>
 
           <div className="mb-4 sm:mb-6">
-            <h4 className="font-semibold mb-2 sm:mb-3 text-indigo-300 text-xs sm:text-base">Features</h4>
+            <h4 className="font-semibold mb-2 sm:mb-3 text-indigo-300 text-xs sm:text-base">
+              Features
+            </h4>
             <ul className="space-y-1 sm:space-y-2">
               {project.features.map((feature, i) => (
                 <motion.li
@@ -506,7 +520,10 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
           <div className="mt-auto flex justify-between items-center">
             <div className="flex gap-1 sm:gap-2">
               {project.icons.map((Icon, i) => (
-                <div key={i} className="p-1 sm:p-2 bg-slate-800/80 rounded-full">
+                <div
+                  key={i}
+                  className="p-1 sm:p-2 bg-slate-800/80 rounded-full"
+                >
                   <Icon className="text-base sm:text-lg text-indigo-400" />
                 </div>
               ))}
@@ -516,6 +533,8 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-slate-800 text-xs sm:text-sm font-medium flex items-center gap-1 sm:gap-2 text-white"
               >
                 <FaGithub />
@@ -524,6 +543,8 @@ const ProjectCard = ({ project, index, isFlipped, setFlipped }) => {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-2 sm:px-4 py-1 sm:py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-xs sm:text-sm font-medium flex items-center gap-1 sm:gap-2 text-white"
               >
                 <FaExternalLinkAlt />
