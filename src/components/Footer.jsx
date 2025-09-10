@@ -96,6 +96,8 @@ const Footer = () => {
         </motion.div>
 
         {/* Navigation Links */}
+        
+        {/* Navigation Links */}
         <motion.ul
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,12 +110,20 @@ const Footer = () => {
               <a
                 href={`#${link.toLowerCase()}`}
                 className="hover:text-indigo-400 transition-colors duration-300"
+                onClick={e => {
+                  e.preventDefault();
+                  const section = document.getElementById(link.toLowerCase());
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 {link}
               </a>
             </li>
           ))}
         </motion.ul>
+
 
         {/* Social Icons */}
         <motion.div
@@ -147,13 +157,13 @@ const Footer = () => {
         <p className="text-sm text-slate-500">
           © {new Date().getFullYear()} Bijaya Tamang. All rights reserved.
         </p>
-        <p className="text-xs mt-2 text-slate-600">
+        {/* <p className="text-xs mt-2 text-slate-600">
           Built with{" "}
           <span className="text-green-400 font-semibold">MongoDB</span>,{" "}
           <span className="text-blue-400 font-semibold">Express</span>,{" "}
           <span className="text-cyan-400 font-semibold">React</span>,{" "}
           <span className="text-yellow-400 font-semibold">Node.js</span>
-        </p>
+        </p> */}
       </motion.div>
 
       {/* Scroll to Top Button */}
