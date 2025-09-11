@@ -1,12 +1,5 @@
-
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaFileDownload,
-} from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 
@@ -18,7 +11,6 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState("Home");
 
   useEffect(() => {
-    // Set active link based on current pathname
     const pathToName = {
       "/": "Home",
       "/projects": "Projects",
@@ -193,20 +185,6 @@ const Navbar = () => {
 
         {/* Desktop Right Buttons */}
         <div className="hidden md:flex items-center gap-3 ml-auto">
-          {/* Social Icons */}
-
-          {/* CV Button */}
-          {/* <motion.div 
-            className="blue-border relative z-0 overflow-hidden p-0.5 flex items-center justify-center rounded-full"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <button className="px-4 py-2 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center gap-2">
-              <FaFileDownload className="text-sm" />
-              <span>CV</span>
-            </button>
-          </motion.div> */}
-
           {/* Hire Me Button */}
           <motion.div
             className="rainbow-border relative z-0 overflow-hidden p-0.5 flex items-center justify-center rounded-full"
@@ -260,7 +238,11 @@ const Navbar = () => {
               rounded-2xl p-6 flex flex-col items-center gap-4 shadow-xl md:hidden"
             >
               {navLinks.map((link, index) => (
-                <motion.div key={index} whileHover={{ x: 5 }} whileTap={{ x: 0 }}>
+                <motion.div
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  whileTap={{ x: 0 }}
+                >
                   <Link
                     to={link.path}
                     className={`w-full text-center py-3 px-4 rounded-lg transition-all duration-300
@@ -280,17 +262,6 @@ const Navbar = () => {
               ))}
 
               <div className="flex flex-col gap-3 w-full items-center mt-2">
-                {/* <motion.div
-                  className="blue-border relative z-0 w-full max-w-xs overflow-hidden p-0.5 flex items-center justify-center rounded-full"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <button className="w-full px-4 py-3 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center justify-center gap-2">
-                    <FaFileDownload className="text-sm" />
-                    <span>Download CV</span>
-                  </button>
-                </motion.div> */}
-
                 <motion.div
                   className="rainbow-border relative z-0 w-full max-w-xs overflow-hidden p-0.5 flex items-center justify-center rounded-full"
                   whileHover={{ scale: 1.02 }}
