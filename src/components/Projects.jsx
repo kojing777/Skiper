@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import {
   FaGithub,
   FaExternalLinkAlt,
   FaReact,
   FaNodeJs,
-  FaDatabase,
   FaMobile,
   FaServer,
 } from "react-icons/fa";
@@ -16,14 +15,7 @@ import { FaHtml5 } from "react-icons/fa";
 import { FaJsSquare } from "react-icons/fa";
 import { SiCss3 } from "react-icons/si";
 
-import {
-  SiMongodb,
-  SiExpress,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiTypescript,
-  SiFirebase,
-} from "react-icons/si";
+import { SiMongodb, SiTailwindcss } from "react-icons/si";
 
 const visualData = [
   {
