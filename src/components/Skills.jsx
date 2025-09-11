@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   FaHtml5,
@@ -11,10 +11,17 @@ import {
   FaTools,
   FaCode,
 } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiTailwindcss, SiVercel, SiPostman, SiRender } from "react-icons/si";
+import {
+  SiMongodb,
+  SiExpress,
+  SiTailwindcss,
+  SiVercel,
+  SiPostman,
+  SiRender,
+} from "react-icons/si";
 import { FaGithub } from "react-icons/fa6";
 
-// Background Component (Shared between sections)
+// Background Component
 const AnimatedBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
@@ -79,7 +86,10 @@ const Skills = () => {
   ];
 
   return (
-  <section id="skills" className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden pt-20">
+    <section
+      id="skills"
+      className="relative min-h-screen py-12 px-6 md:px-20 lg:px-32 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden pt-20"
+    >
       <AnimatedBackground />
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -96,7 +106,10 @@ const Skills = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            My <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">Skills</span>
+            My{" "}
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 text-transparent bg-clip-text">
+              Skills
+            </span>
           </motion.h1>
 
           <motion.p
@@ -105,7 +118,8 @@ const Skills = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Explore the technologies and tools I specialize in. This section is all about my personal skills and development toolkit.
+            Explore the technologies and tools I specialize in. This section is
+            all about my personal skills and development toolkit.
           </motion.p>
         </motion.div>
 
@@ -154,29 +168,6 @@ const Skills = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Call to Action Section */}
-        {/* <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">
-            Want to <span className="text-purple-400">See More</span>?
-          </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-            Check out my projects to see these technologies in action.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300"
-          >
-            View Portfolio
-          </motion.button>
-        </motion.div> */}
       </div>
     </section>
   );
