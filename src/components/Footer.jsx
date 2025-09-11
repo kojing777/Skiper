@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  Twitter,
-  Mail,
-  Globe,
-  ArrowUp,
-  X,
-} from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Globe } from "lucide-react";
 
 const Footer = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -94,7 +86,7 @@ const Footer = () => {
           </h2>
           <p className="text-sm text-slate-400 mt-1">MERN Stack Developer.</p>
         </motion.div>
-        
+
         {/* Navigation Links */}
         <motion.ul
           initial={{ opacity: 0, y: 20 }}
@@ -108,7 +100,7 @@ const Footer = () => {
               <a
                 href={`#${link.toLowerCase()}`}
                 className="hover:text-indigo-400 transition-colors duration-300"
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   const section = document.getElementById(link.toLowerCase());
                   if (section) {
@@ -130,7 +122,6 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex gap-4"
         >
-          {/* Update these URLs with your actual profiles */}
           <motion.a
             href="https://github.com/kojing777"
             target="_blank"
@@ -168,7 +159,6 @@ const Footer = () => {
             <Globe size={20} />
           </motion.a>
         </motion.div>
-
       </div>
 
       {/* Bottom Bar */}
