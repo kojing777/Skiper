@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaHeart, FaLightbulb } from "react-icons/fa";
 import createGlobe from "cobe";
@@ -281,7 +281,7 @@ const AboutMe = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="flex flex-col justify-center"
             >
-              {/* Main Text Card with Clip Path */}
+              {/* Main Text Card */}
               <motion.div
                 className="relative bg-gradient-to-br from-slate-800 to-slate-900 p-8 shadow-2xl border border-slate-700/50"
                 style={{
@@ -500,7 +500,7 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Call to Action Section */}
+        {/* Call to Action */}
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
