@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -63,7 +63,7 @@ const ContactMe = () => {
     },
   };
 
-  // Floating animation for elements
+  // Floating animation
   const floatingAnimation = {
     y: [0, -10, 0],
     transition: {
