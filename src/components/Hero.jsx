@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import  { useEffect, useRef, useState } from "react";
 // Smooth scroll handler
 const handleSmoothScroll = (e, targetId) => {
   e.preventDefault();
@@ -11,13 +11,17 @@ const handleSmoothScroll = (e, targetId) => {
 };
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
-import { FaGithub, FaLinkedin, FaTwitter, FaFileDownload } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaFileDownload,
+} from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import Image from "../assets/me3121212.jpg";
 import Image1 from "../assets/oreo.jpg";
 
-
-// 🎨 GRID BACKGROUND SETTINGS
+// GRID BACKGROUND SETTINGS
 const CELL_SIZE = 120;
 const COLORS = ["#A764FF", "#4B94FD", "#FD4B4E", "#FF8743"];
 
@@ -119,10 +123,10 @@ function InteractiveGrid() {
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col-reverse md:flex-row  items-center justify-center md:justify-between px-6 md:px-20 lg:px-32 bg-slate-950 text-white overflow-hidden">
-      {/* ✅ Interactive Hover Grid Background */}
+      {/*  Interactive Hover Grid Background */}
       <InteractiveGrid />
 
-      {/* ✅ Floating blobs (on top of grid) */}
+      {/*  Floating blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
@@ -131,17 +135,27 @@ const Hero = () => {
         />
         <motion.div
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute top-3/4 right-20 w-16 h-16 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 blur-sm"
         />
         <motion.div
           animate={{ y: [0, -30, 0], x: [0, 10, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
           className="absolute bottom-1/3 left-1/4 w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-500/15 to-blue-500/15 blur-sm"
         />
       </div>
 
-      {/* ✅ Left content */}
+      {/* Left content */}
       <motion.div
         initial={{ x: -80, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -195,25 +209,28 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
-            <a href="#projects" onClick={e => handleSmoothScroll(e, "projects")}> 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 transition-all font-medium flex items-center gap-2 shadow-lg shadow-indigo-500/20"
-              >
-                View Projects
-              </motion.button>
-            </a>
-            <a href="#contact" onClick={e => handleSmoothScroll(e, "contact")}> 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 rounded-full border border-slate-600 hover:border-indigo-500 transition-all font-medium flex items-center gap-2"
-              >
-                <HiMail className="text-lg" />
-                Contact Me
-              </motion.button>
-            </a>
+          <a
+            href="#projects"
+            onClick={(e) => handleSmoothScroll(e, "projects")}
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 transition-all font-medium flex items-center gap-2 shadow-lg shadow-indigo-500/20"
+            >
+              View Projects
+            </motion.button>
+          </a>
+          <a href="#contact" onClick={(e) => handleSmoothScroll(e, "contact")}>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-full border border-slate-600 hover:border-indigo-500 transition-all font-medium flex items-center gap-2"
+            >
+              <HiMail className="text-lg" />
+              Contact Me
+            </motion.button>
+          </a>
           <motion.a
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -263,15 +280,13 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* ✅ Right image with effects */}
-     <motion.div
-  initial={{ scale: 0.8, opacity: 0 }}
-  animate={{ scale: 1, opacity: 1 }}
-  transition={{ duration: 1, delay: 0.3 }}
-  className="relative mt-12 md:mt-0 flex justify-center items-center md:-translate-x-4"
-
->
-
+      {/* Right image */}
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3 }}
+        className="relative mt-12 md:mt-0 flex justify-center items-center md:-translate-x-4"
+      >
         {/* Ripple Effect */}
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.1, 0.2] }}
@@ -280,7 +295,12 @@ const Hero = () => {
         />
         <motion.div
           animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.05, 0.1] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute w-80 h-80 md:w-[26rem] md:h-[26rem] rounded-full bg-gradient-to-r from-indigo-600/20 via-purple-600/20 to-pink-600/20"
         />
 
@@ -308,7 +328,12 @@ const Hero = () => {
         </motion.div>
         <motion.div
           animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
           className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/30"
         >
           <span className="text-white font-bold">JS</span>
