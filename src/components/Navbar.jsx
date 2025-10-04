@@ -25,6 +25,17 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      // Update active section on scroll - Integrated from second navbar
+      const sections = ["top", "about", "projects", "skills", "experience", "contact"];
+      let currentSection = "top";
+      for (let section of sections) {
+        const el = document.getElementById(section);
+        if (el && window.scrollY >= el.offsetTop - window.innerHeight / 2) {
+          currentSection = section === "top" ? "Home" : section.charAt(0).toUpperCase() + section.slice(1);
+        }
+      }
+      setActiveLink(currentSection);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -38,6 +49,17 @@ const Navbar = () => {
     { name: "Experience", path: "/experience" },
     { name: "Contact", path: "/contact" },
   ];
+
+  // Integrated scroll function from second navbar
+  const handleScrollTo = (path) => {
+    let sectionId = path === "/" ? "top" : path.replace("/", "");
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setActiveLink(navLinks.find(link => link.path === path)?.name);
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
@@ -160,15 +182,7 @@ const Navbar = () => {
                       ? "text-white bg-slate-800/50"
                       : "text-slate-300 hover:text-white hover:bg-slate-800/30"
                   }`}
-                onClick={() => {
-                  setActiveLink(link.name);
-                  let sectionId = link.name.toLowerCase();
-                  if (sectionId === "home") sectionId = "top";
-                  const section = document.getElementById(sectionId);
-                  if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                onClick={() => handleScrollTo(link.path)}
               >
                 {link.name}
                 {activeLink === link.name && (
@@ -243,21 +257,17 @@ const Navbar = () => {
                   whileHover={{ x: 5 }}
                   whileTap={{ x: 0 }}
                 >
-                  <Link
-                    to={link.path}
+                  <button
                     className={`w-full text-center py-3 px-4 rounded-lg transition-all duration-300
                       ${
                         activeLink === link.name
                           ? "bg-gradient-to-r from-indigo-600/20 to-purple-600/20 text-white"
                           : "text-slate-300 hover:text-white hover:bg-slate-800/50"
                       }`}
-                    onClick={() => {
-                      setActiveLink(link.name);
-                      setIsMenuOpen(false);
-                    }}
+                    onClick={() => handleScrollTo(link.path)}
                   >
                     {link.name}
-                  </Link>
+                  </button>
                 </motion.div>
               ))}
 
