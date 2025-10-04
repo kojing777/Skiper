@@ -311,7 +311,7 @@ const Hero = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 group-hover:opacity-0 transition-opacity duration-700 z-10"></div>
           <img
-            src={Image1}
+            src={Image}
             alt="Kojing Moktan"
             className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
           />

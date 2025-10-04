@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMail } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState(null);
 
   const location = useLocation();
   const [activeLink, setActiveLink] = useState("Home");
@@ -26,7 +27,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Update active section on scroll - Integrated from second navbar
+      // Update active section on scroll
       const sections = ["top", "about", "projects", "skills", "experience", "contact"];
       let currentSection = "top";
       for (let section of sections) {
@@ -37,6 +38,7 @@ const Navbar = () => {
       }
       setActiveLink(currentSection);
     };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -50,8 +52,7 @@ const Navbar = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  // Integrated scroll function from second navbar
-  const handleScrollTo = (path) => {
+  const handleScrollTo = useCallback((path) => {
     let sectionId = path === "/" ? "top" : path.replace("/", "");
     const section = document.getElementById(sectionId);
     if (section) {
@@ -59,11 +60,10 @@ const Navbar = () => {
     }
     setActiveLink(navLinks.find(link => link.path === path)?.name);
     setIsMenuOpen(false);
-  };
+  }, [navLinks]);
 
   return (
     <>
-      {/* Animated Border Buttons */}
       <style>{`
         @keyframes rotate {
           100% { transform: rotate(1turn); }
@@ -85,25 +85,6 @@ const Navbar = () => {
             linear-gradient(#ec4899, #ec4899),
             linear-gradient(#f59e0b, #f59e0b);
           animation: rotate 4s linear infinite;
-        }
-        
-        .blue-border::before {
-          content: '';
-          position: absolute;
-          z-index: -2;
-          left: -50%; 
-          top: -50%;
-          width: 200%; 
-          height: 200%;
-          background-repeat: no-repeat;
-          background-size: 50% 50%, 50% 50%;
-          background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-          background-image: 
-            linear-gradient(#3b82f6, #3b82f6),
-            linear-gradient(#06b6d4, #06b6d4),
-            linear-gradient(#3b82f6, #3b82f6),
-            linear-gradient(#06b6d4, #06b6d4);
-          animation: rotate 6s linear infinite;
         }
         
         .nav-glass {
@@ -128,6 +109,34 @@ const Navbar = () => {
         
         .logo-glow {
           animation: pulse-glow 2s infinite;
+        }
+
+        /* New underline animation styles */
+        .underline-hover {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .underline-hover::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, #4f46e5, #9333ea, #ec4899, #f59e0b);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease;
+        }
+
+        .underline-hover:hover::after {
+          transform: scaleX(1);
+        }
+
+        .active-underline::after {
+          transform: scaleX(1);
+          background: linear-gradient(90deg, #4f46e5, #9333ea);
         }
       `}</style>
 
@@ -162,34 +171,42 @@ const Navbar = () => {
               BT
             </span>
           </motion.div>
-          {/* <span
-            className={`hidden md:inline font-bold transition-all duration-500 
-             text-transparent text-xl bg-clip-text bg-gradient-to-r from-indigo-300 to-purple-300`}
-          >
-            BIJAYA M.
-          </span> */}
         </motion.a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1 mx-auto">
           {navLinks.map((link, index) => (
-            <motion.div key={index} whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
+            <motion.div 
+              key={index} 
+              className="relative"
+              onHoverStart={() => setHoveredLink(link.name)}
+              onHoverEnd={() => setHoveredLink(null)}
+            >
               <button
                 type="button"
-                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full
+                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full underline-hover
                   ${
                     activeLink === link.name
-                      ? "text-white bg-slate-800/50"
+                      ? "text-white bg-slate-800/50 active-underline"
                       : "text-slate-300 hover:text-white hover:bg-slate-800/30"
                   }`}
                 onClick={() => handleScrollTo(link.path)}
               >
                 {link.name}
-                {activeLink === link.name && (
-                  <motion.span
-                    className="absolute left-0 bottom-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
-                    layoutId="activeLink"
-                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                
+                {/* Animated Gradient Underline */}
+                {(activeLink === link.name || hoveredLink === link.name) && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    exit={{ scaleX: 0 }}
+                    transition={{ 
+                      type: "spring", 
+                      stiffness: 400, 
+                      damping: 30,
+                      duration: 0.3
+                    }}
                   />
                 )}
               </button>
@@ -199,7 +216,6 @@ const Navbar = () => {
 
         {/* Desktop Right Buttons */}
         <div className="hidden md:flex items-center gap-3 ml-auto">
-          {/* Hire Me Button */}
           <motion.div
             className="rainbow-border relative z-0 overflow-hidden p-0.5 flex items-center justify-center rounded-full"
             whileHover={{ scale: 1.05 }}
@@ -207,7 +223,7 @@ const Navbar = () => {
           >
             <a
               href="mailto:yourgmailaddress@gmail.com?subject=Hire%20Me%20Inquiry"
-              className="px-5 py-2 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center gap-2"
+              className="px-5 py-2 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center gap-2 transition-all duration-300 hover:bg-slate-800/90"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -254,11 +270,12 @@ const Navbar = () => {
               {navLinks.map((link, index) => (
                 <motion.div
                   key={index}
+                  className="w-full"
                   whileHover={{ x: 5 }}
                   whileTap={{ x: 0 }}
                 >
                   <button
-                    className={`w-full text-center py-3 px-4 rounded-lg transition-all duration-300
+                    className={`relative w-full text-center py-3 px-4 rounded-lg transition-all duration-300 overflow-hidden
                       ${
                         activeLink === link.name
                           ? "bg-gradient-to-r from-indigo-600/20 to-purple-600/20 text-white"
@@ -267,6 +284,16 @@ const Navbar = () => {
                     onClick={() => handleScrollTo(link.path)}
                   >
                     {link.name}
+                    
+                    {/* Mobile Active Indicator */}
+                    {activeLink === link.name && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500"
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
                   </button>
                 </motion.div>
               ))}
@@ -278,8 +305,8 @@ const Navbar = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   <a
-                    href="kojingmoktan92@gmail.com?subject=Hire%20Me%20Inquiry"
-                    className="w-full px-4 py-3 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center justify-center gap-2"
+                    href="mailto:kojingmoktan92@gmail.com?subject=Hire%20Me%20Inquiry"
+                    className="w-full px-4 py-3 text-sm text-white rounded-full font-medium bg-slate-900/90 flex items-center justify-center gap-2 transition-all duration-300 hover:bg-slate-800/90"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
